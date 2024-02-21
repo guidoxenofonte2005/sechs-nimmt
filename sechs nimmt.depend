@@ -1,0 +1,33 @@
+# depslib dependency file v1.0
+1708468257 source:c:\users\guido e ageu\desktop\gido\projetos\sechs nimmt\sechs nimmt\fila.c
+	<stdio.h>
+	<stdlib.h>
+	"fila.h"
+
+1708467536 c:\users\guido e ageu\desktop\gido\projetos\sechs nimmt\sechs nimmt\fila.h
+
+1708473706 source:c:\users\guido e ageu\desktop\gido\projetos\sechs nimmt\sechs nimmt\main.c
+	<stdio.h>
+	<stdlib.h>
+	"lista.h"
+	"pilha.h"
+	"fila.h"
+	"uni_game.h"
+
+1708474464 c:\users\guido e ageu\desktop\gido\projetos\sechs nimmt\sechs nimmt\lista.h
+
+1708467522 c:\users\guido e ageu\desktop\gido\projetos\sechs nimmt\sechs nimmt\pilha.h
+
+1708474389 c:\users\guido e ageu\desktop\gido\projetos\sechs nimmt\sechs nimmt\uni_game.h
+
+1708468246 source:c:\users\guido e ageu\desktop\gido\projetos\sechs nimmt\sechs nimmt\pilha.c
+	<stdio.h>
+	<stdlib.h>
+	"pilha.h"
+
+1708473695 source:c:\users\guido e ageu\desktop\gido\projetos\sechs nimmt\sechs nimmt\lista.c
+	<stdio.h>
+	<stdlib.h>
+	"lista.h"
+	"uni_game.h"
+
