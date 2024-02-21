@@ -12,7 +12,7 @@
     quantidade = tamanho OK
 */
 struct elemento {
-    struct carta carta;
+    Carta carta;
     struct elemento *prox;
 };
 
@@ -69,7 +69,7 @@ int inserirOrdenado(Lista *ldse, struct carta novaCarta)
 
 int removerIndice(Lista *ldse, int i)
 {
-    if vazia(ldse)
+    if (vazia(ldse))
         return 0;
     else if (i < 0)
         return 0;
@@ -108,6 +108,27 @@ int acessarIndice(Lista *ldse, int i, struct carta *carta)
         *carta = aux->carta;
         return 1;
     }
+}
+
+int exibirLista(Lista *ldse)
+{
+    if (vazia(ldse))
+        return 0;
+    Elemento *aux = *ldse;
+    struct carta temp;
+    for (int i = 0; i < quantidade(ldse); i++) {
+        int res = acessarIndice(ldse, i, &temp);
+        if (temp.numero < 10)
+            printf("[  %d]", temp.numero);
+        else if (temp.numero >= 10 && temp.numero < 100)
+            printf("[ %d]", temp.numero);
+        else
+            printf("[%d]", temp.numero);
+
+        if (i != quantidade(ldse)-1)
+            printf("->");
+    }
+    return 1;
 }
 
 int quantidade(Lista *ldse)
