@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "pilha.h"
 #include "uni_game.h"
+#include "pilha.h"
 
 /**
   * criar - OK
@@ -13,7 +13,7 @@
 struct elementoPilha
 {
     struct carta carta;
-    struct elemento *prox;
+    struct elementoPilha *prox;
 };
 
 typedef struct elementoPilha ElementoPilha;
@@ -43,7 +43,7 @@ Pilha *criarPilha()
     return pe;
 }
 
-int inserirPilha(Pilha *pe, struct carta novaCarta)
+int inserirPilha(Pilha * pe, struct carta novaCarta)
 {
     if (pe == NULL)
         return 0;

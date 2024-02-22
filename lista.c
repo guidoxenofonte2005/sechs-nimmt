@@ -12,7 +12,7 @@
     quantidade = tamanho OK
 */
 struct elemento {
-    Carta carta;
+    struct carta carta;
     struct elemento *prox;
 };
 
@@ -114,7 +114,6 @@ int exibirLista(Lista *ldse)
 {
     if (vazia(ldse))
         return 0;
-    Elemento *aux = *ldse;
     struct carta temp;
     for (int i = 0; i < quantidade(ldse); i++) {
         int res = acessarIndice(ldse, i, &temp);

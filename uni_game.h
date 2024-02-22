@@ -5,5 +5,3 @@ struct carta
     int bois;
     int jogador;
 };
-
-typedef struct carta Carta;

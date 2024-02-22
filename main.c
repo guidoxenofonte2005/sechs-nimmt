@@ -1,9 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include "uni_game.h"
 #include "lista.h"
 #include "pilha.h"
 #include "fila.h"
-#include "uni_game.h"
 
 #define FILAS 4
 
