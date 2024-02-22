@@ -27,11 +27,11 @@ struct fila
 
 // aux functions
 
-int vaziaFila(Fila fd)
+int vaziaFila(Fila *fd)
 {
     if (fd == NULL)
         return 1;
-    else if (fd->inicio == NULL)
+    else if ((*fd)->inicio == NULL)
         return 1;
     else
         return 0;
@@ -83,7 +83,7 @@ int removerFila(Fila *fd, struct carta *cartaRemovida)
     }
 }
 
-int acessar(Fila *fd, struct carta *cartaAcessada)
+int acessarFila(Fila *fd, struct carta *cartaAcessada)
 {
     if (vaziaFila(fd))
         return 0;

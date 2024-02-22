@@ -5,8 +5,23 @@
 #include "fila.h"
 #include "uni_game.h"
 
+#define FILAS 4
+
 int main()
 {
-    printf("Hello world\n");
+    Lista * Mao;
+    Fila ** Mesa;
+    Pilha * Baralho;
+    Lista ** ColecaoJogadores;
+
+    int temp_pcount = 0;
+    printf("Qtd: ");
+    scanf("%d", &temp_pcount);
+
+    ColecaoJogadores = (Lista **) malloc(sizeof(Lista *));
+    for (int i = 0; i < temp_pcount; i++) {
+        ColecaoJogadores[i] = criar();
+    }
+
     return 0;
 }
