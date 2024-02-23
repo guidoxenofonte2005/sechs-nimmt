@@ -1,5 +1,4 @@
-
-typedef struct elemento * Lista;
+typedef struct elemento* Lista;
 
 Lista *criar();
 int inserirOrdenado(Lista *, struct carta);

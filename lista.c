@@ -12,7 +12,7 @@
     quantidade = tamanho OK
 */
 struct elemento {
-    struct carta carta;
+    Carta carta;
     struct elemento *prox;
 };
 

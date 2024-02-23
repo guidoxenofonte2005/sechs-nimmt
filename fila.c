@@ -13,7 +13,7 @@
   */
 struct elementoFila
 {
-    struct carta carta;
+    Carta carta;
     struct elementoFila *prox;
 };
 
@@ -95,10 +95,7 @@ int acessarFila(Fila *fd, struct carta *cartaAcessada)
 
 int exibirFila(Fila *fd)
 {
-    if (vaziaFila(fd))
-        return 0;
-    else
-        return 1;
+
 }
 
 int tamanhoFila(Fila *fd)

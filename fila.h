@@ -7,3 +7,4 @@ int removerFila(Fila *, struct carta *);
 int acessarFila(Fila *, struct carta *);
 int exibirFila(Fila *);
 int tamanhoFila(Fila *);
+

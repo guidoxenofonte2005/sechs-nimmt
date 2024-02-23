@@ -1,5 +1,5 @@
 
-typedef struct elementoPilha * Pilha;
+typedef struct elementoPilha *Pilha;
 
 Pilha *criarPilha();
 int inserirPilha(Pilha *, struct carta);

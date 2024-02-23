@@ -1,7 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
 #include "uni_game.h"
 #include "pilha.h"
+
+#define CARDS 104
 
 /**
   * criar - OK
@@ -13,7 +16,7 @@
 struct elementoPilha
 {
     struct carta carta;
-    struct elementoPilha *prox;
+    struct elemento *prox;
 };
 
 typedef struct elementoPilha ElementoPilha;
@@ -43,7 +46,7 @@ Pilha *criarPilha()
     return pe;
 }
 
-int inserirPilha(Pilha * pe, struct carta novaCarta)
+int inserirPilha(Pilha *pe, struct carta novaCarta)
 {
     if (pe == NULL)
         return 0;
@@ -71,9 +74,74 @@ int removerPilha(Pilha *pe, struct carta *cartaRemovida)
     return 1;
 }
 
+// temporary
+int acessarIndiceP(Pilha *pe, int i, struct carta *carta)
+{
+    if (vaziaPilha(pe))
+        return 0;
+    else if (i < 0)
+        return 0;
+    else {
+        int cont = 0;
+        ElementoPilha *aux = *pe;
+        while (aux != NULL && i != cont) {
+            cont++;
+            aux = aux->prox;
+        }
+        if (aux == NULL)
+            return 0;
+        *carta = aux->carta;
+        return 1;
+    }
+}
+
 void embaralhar(Pilha *pe)
 {
+    srand(time(NULL));
 
+    if (vaziaPilha(pe))
+        return 0;
+    else {
+        for (int i = 0; i < CARDS; i++) {
+            int random = rand() % (CARDS - 1);
+            ElementoPilha *ant = NULL;
+            ElementoPilha *aux = *pe;
+
+            for (int j = 0; j < random; j++) {
+                ant = aux;
+                aux = aux->prox;
+            }
+
+            ElementoPilha *pos = aux;
+            ElementoPilha *fim = pos->prox;
+
+            if (fim->prox != NULL) {
+                while (fim->prox != NULL) {
+                    pos = fim;
+                    fim = fim->prox;
+                }
+                if (random != 0) {
+                    fim->prox = aux->prox;
+                    ant->prox = fim;
+                    pos->prox = aux;
+                    aux->prox = NULL;
+                }
+                else {
+                    fim->prox = aux->prox;
+                    pos->prox = aux;
+                    aux->prox = NULL;
+                    *pe = fim;
+                }
+            }
+            else {
+                ant->prox = fim;
+                fim->prox = aux;
+                aux->prox = NULL;
+            }
+        }
+    }
+
+    return 1;
 }
 
 int tamanhoPilha(Pilha *pe)

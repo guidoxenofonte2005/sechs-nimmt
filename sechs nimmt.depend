@@ -31,57 +31,57 @@
 	"lista.h"
 	"uni_game.h"
 
-1708610793 source:c:\users\guido\desktop\projetos guido\sechs nimmt\sechs-nimmt\fila.c
+1708529543 source:c:\users\guido\desktop\projetos guido\sechs nimmt\sechs-nimmt\fila.c
 	<stdio.h>
 	<stdlib.h>
 	"fila.h"
+	"uni_game.h"
 
-1708610812 c:\users\guido\desktop\projetos guido\sechs nimmt\sechs-nimmt\fila.h
+1708529826 c:\users\guido\desktop\projetos guido\sechs nimmt\sechs-nimmt\fila.h
 
-1708610782 source:c:\users\guido\desktop\projetos guido\sechs nimmt\sechs-nimmt\lista.c
-	<stdio.h>
-	<stdlib.h>
-	"lista.h"
-
-1708610688 c:\users\guido\desktop\projetos guido\sechs nimmt\sechs-nimmt\uni_game.h
-
-1708610808 c:\users\guido\desktop\projetos guido\sechs nimmt\sechs-nimmt\lista.h
-
-1708610863 source:c:\users\guido\desktop\projetos guido\sechs nimmt\sechs-nimmt\main.c
+1708529196 source:c:\users\guido\desktop\projetos guido\sechs nimmt\sechs-nimmt\lista.c
 	<stdio.h>
 	<stdlib.h>
 	"uni_game.h"
 	"lista.h"
+
+1708529178 c:\users\guido\desktop\projetos guido\sechs nimmt\sechs-nimmt\uni_game.h
+
+1708514848 c:\users\guido\desktop\projetos guido\sechs nimmt\sechs-nimmt\lista.h
+
+1708515469 source:c:\users\guido\desktop\projetos guido\sechs nimmt\sechs-nimmt\main.c
+	<stdio.h>
+	<stdlib.h>
+	"lista.h"
 	"pilha.h"
 	"fila.h"
+	"uni_game.h"
 
-1708610810 c:\users\guido\desktop\projetos guido\sechs nimmt\sechs-nimmt\pilha.h
+1708529687 c:\users\guido\desktop\projetos guido\sechs nimmt\sechs-nimmt\pilha.h
 
-1708610763 source:c:\users\guido\desktop\projetos guido\sechs nimmt\sechs-nimmt\pilha.c
+1708529130 source:c:\users\guido\desktop\projetos guido\sechs nimmt\sechs-nimmt\pilha.c
 	<stdio.h>
 	<stdlib.h>
 	"pilha.h"
+	"uni_game.h"
 
-1708600229 source:c:\users\guido\desktop\projetos guido\sechs nimmt\sechs-nimmt\uni_game.c
+1708528871 source:c:\users\guido\desktop\projetos guido\sechs nimmt\sechs-nimmt\uni_game.c
 	<stdio.h>
 	<stdlib.h>
 	<windows.h>
 	"uni_game.h"
-	"lista.h"
-	"pilha.h"
-	"fila.h"
 
-1708556315 source:c:\users\guido e ageu\desktop\gido\projetos\sechs nimmt\sechs-nimmt\fila.c
+1708641650 source:c:\users\guido e ageu\desktop\gido\projetos\sechs nimmt\sechs-nimmt\fila.c
 	<stdio.h>
 	<stdlib.h>
-	"fila.h"
 	"uni_game.h"
+	"fila.h"
 
-1708560408 c:\users\guido e ageu\desktop\gido\projetos\sechs nimmt\sechs-nimmt\fila.h
+1708641493 c:\users\guido e ageu\desktop\gido\projetos\sechs nimmt\sechs-nimmt\fila.h
 
-1708556315 c:\users\guido e ageu\desktop\gido\projetos\sechs nimmt\sechs-nimmt\uni_game.h
+1708646186 c:\users\guido e ageu\desktop\gido\projetos\sechs nimmt\sechs-nimmt\uni_game.h
 
-1708556315 source:c:\users\guido e ageu\desktop\gido\projetos\sechs nimmt\sechs-nimmt\lista.c
+1708646101 source:c:\users\guido e ageu\desktop\gido\projetos\sechs nimmt\sechs-nimmt\lista.c
 	<stdio.h>
 	<stdlib.h>
 	"uni_game.h"
@@ -89,26 +89,29 @@
 
 1708556315 c:\users\guido e ageu\desktop\gido\projetos\sechs nimmt\sechs-nimmt\lista.h
 
-1708560025 source:c:\users\guido e ageu\desktop\gido\projetos\sechs nimmt\sechs-nimmt\main.c
+1708649451 source:c:\users\guido e ageu\desktop\gido\projetos\sechs nimmt\sechs-nimmt\main.c
 	<stdio.h>
 	<stdlib.h>
+	<time.h>
 	"lista.h"
 	"pilha.h"
 	"fila.h"
 	"uni_game.h"
 
-1708559997 c:\users\guido e ageu\desktop\gido\projetos\sechs nimmt\sechs-nimmt\pilha.h
+1708639725 c:\users\guido e ageu\desktop\gido\projetos\sechs nimmt\sechs-nimmt\pilha.h
 
-1708560352 source:c:\users\guido e ageu\desktop\gido\projetos\sechs nimmt\sechs-nimmt\pilha.c
+1708647410 source:c:\users\guido e ageu\desktop\gido\projetos\sechs nimmt\sechs-nimmt\pilha.c
 	<stdio.h>
 	<stdlib.h>
-	"pilha.h"
+	<time.h>
 	"uni_game.h"
+	"pilha.h"
 
-1708560002 source:c:\users\guido e ageu\desktop\gido\projetos\sechs nimmt\sechs-nimmt\uni_game.c
+1708651096 source:c:\users\guido e ageu\desktop\gido\projetos\sechs nimmt\sechs-nimmt\uni_game.c
 	<stdio.h>
 	<stdlib.h>
 	<windows.h>
+	<locale.h>
 	"uni_game.h"
 	"lista.h"
 	"pilha.h"

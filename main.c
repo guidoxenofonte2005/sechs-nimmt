@@ -1,27 +1,28 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "uni_game.h"
+#include <time.h>
 #include "lista.h"
 #include "pilha.h"
 #include "fila.h"
+#include "uni_game.h"
 
 #define FILAS 4
 
 int main()
 {
+    config();
+    title();
+    srand(time(NULL));
+
     Lista * Mao;
     Fila ** Mesa;
     Pilha * Baralho;
     Lista ** ColecaoJogadores;
 
-    int temp_pcount = 0;
-    printf("Qtd: ");
-    scanf("%d", &temp_pcount);
+    Mao = criar();
+    Baralho = criarPilha();
 
-    ColecaoJogadores = (Lista **) malloc(sizeof(Lista *));
-    for (int i = 0; i < temp_pcount; i++) {
-        ColecaoJogadores[i] = criar();
-    }
+    iniciarRound(Mao, Mesa, Baralho, ColecaoJogadores);
 
     return 0;
 }
