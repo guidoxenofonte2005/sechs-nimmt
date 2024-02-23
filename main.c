@@ -6,23 +6,32 @@
 #include "fila.h"
 #include "uni_game.h"
 
-#define FILAS 4
+#define ROUNDS 10
 
 int main()
 {
-    config();
-    title();
-    srand(time(NULL));
-
+    // variables
     Lista * Mao;
     Fila ** Mesa;
     Pilha * Baralho;
     Lista ** ColecaoJogadores;
+    int jogadores = 0;
+    int *pontos;
+
+    config();
+    title();
+    srand(time(NULL));
 
     Mao = criar();
     Baralho = criarPilha();
 
-    iniciarRound(Mao, Mesa, Baralho, ColecaoJogadores);
+    do {
+    printf("Qtd de jogadores: ");
+    fflush(stdin);
+    scanf("%d", &jogadores);
+    } while (jogadores < 2 || jogadores > 10);
+
+    iniciarRound(Mao, Mesa, Baralho, ColecaoJogadores, jogadores);
 
     return 0;
 }

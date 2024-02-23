@@ -74,27 +74,6 @@ int removerPilha(Pilha *pe, struct carta *cartaRemovida)
     return 1;
 }
 
-// temporary
-int acessarIndiceP(Pilha *pe, int i, struct carta *carta)
-{
-    if (vaziaPilha(pe))
-        return 0;
-    else if (i < 0)
-        return 0;
-    else {
-        int cont = 0;
-        ElementoPilha *aux = *pe;
-        while (aux != NULL && i != cont) {
-            cont++;
-            aux = aux->prox;
-        }
-        if (aux == NULL)
-            return 0;
-        *carta = aux->carta;
-        return 1;
-    }
-}
-
 void embaralhar(Pilha *pe)
 {
     srand(time(NULL));

@@ -95,20 +95,34 @@ int acessarFila(Fila *fd, struct carta *cartaAcessada)
 
 int exibirFila(Fila *fd)
 {
+    if (vaziaFila(fd))
+        return 0;
+    struct carta temp;
+    for (int i = 0; i < tamanhoFila(fd); i++) {
+        int res = acessarFila(fd, &temp);
+        if (temp.numero < 10)
+            printf("[  %d]", temp.numero);
+        else if (temp.numero >= 10 && temp.numero < 100)
+            printf("[ %d]", temp.numero);
+        else
+            printf("[%d]", temp.numero);
 
+        if (i != tamanhoFila(fd)-1)
+            printf("->");
+    }
+    return 1;
 }
 
 int tamanhoFila(Fila *fd)
 {
     if (vaziaFila(fd))
         return 0;
-    else {
-        int cont = 0;
-        ElementoFila *aux = fd->inicio;
-        while (aux != NULL) {
-            cont++;
-            aux = aux->prox;
-        }
-        return cont;
+    int cont = 0;
+    ElementoFila *aux = fd->inicio;
+    while (aux != NULL) {
+        cont++;
+        aux = aux->prox;
     }
+    return cont;
+
 }

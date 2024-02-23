@@ -31,45 +31,51 @@
 	"lista.h"
 	"uni_game.h"
 
-1708529543 source:c:\users\guido\desktop\projetos guido\sechs nimmt\sechs-nimmt\fila.c
+1708698070 source:c:\users\guido\desktop\projetos guido\sechs nimmt\sechs-nimmt\fila.c
 	<stdio.h>
 	<stdlib.h>
-	"fila.h"
 	"uni_game.h"
+	"fila.h"
 
-1708529826 c:\users\guido\desktop\projetos guido\sechs nimmt\sechs-nimmt\fila.h
+1708686916 c:\users\guido\desktop\projetos guido\sechs nimmt\sechs-nimmt\fila.h
 
-1708529196 source:c:\users\guido\desktop\projetos guido\sechs nimmt\sechs-nimmt\lista.c
+1708686916 source:c:\users\guido\desktop\projetos guido\sechs nimmt\sechs-nimmt\lista.c
 	<stdio.h>
 	<stdlib.h>
 	"uni_game.h"
 	"lista.h"
 
-1708529178 c:\users\guido\desktop\projetos guido\sechs nimmt\sechs-nimmt\uni_game.h
+1708686916 c:\users\guido\desktop\projetos guido\sechs nimmt\sechs-nimmt\uni_game.h
 
-1708514848 c:\users\guido\desktop\projetos guido\sechs nimmt\sechs-nimmt\lista.h
+1708686916 c:\users\guido\desktop\projetos guido\sechs nimmt\sechs-nimmt\lista.h
 
-1708515469 source:c:\users\guido\desktop\projetos guido\sechs nimmt\sechs-nimmt\main.c
+1708704745 source:c:\users\guido\desktop\projetos guido\sechs nimmt\sechs-nimmt\main.c
 	<stdio.h>
 	<stdlib.h>
+	<time.h>
 	"lista.h"
 	"pilha.h"
 	"fila.h"
 	"uni_game.h"
 
-1708529687 c:\users\guido\desktop\projetos guido\sechs nimmt\sechs-nimmt\pilha.h
+1708686916 c:\users\guido\desktop\projetos guido\sechs nimmt\sechs-nimmt\pilha.h
 
-1708529130 source:c:\users\guido\desktop\projetos guido\sechs nimmt\sechs-nimmt\pilha.c
+1708689797 source:c:\users\guido\desktop\projetos guido\sechs nimmt\sechs-nimmt\pilha.c
 	<stdio.h>
 	<stdlib.h>
-	"pilha.h"
+	<time.h>
 	"uni_game.h"
+	"pilha.h"
 
-1708528871 source:c:\users\guido\desktop\projetos guido\sechs nimmt\sechs-nimmt\uni_game.c
+1708703410 source:c:\users\guido\desktop\projetos guido\sechs nimmt\sechs-nimmt\uni_game.c
 	<stdio.h>
 	<stdlib.h>
 	<windows.h>
+	<locale.h>
 	"uni_game.h"
+	"lista.h"
+	"pilha.h"
+	"fila.h"
 
 1708641650 source:c:\users\guido e ageu\desktop\gido\projetos\sechs nimmt\sechs-nimmt\fila.c
 	<stdio.h>

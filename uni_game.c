@@ -8,6 +8,8 @@
 #include "fila.h"
 
 #define CARDS 104
+#define IND_CARDS 10
+#define FILAS 4
 // aux/aesthetic functions
 
 void color(int cor)
@@ -22,6 +24,7 @@ void config()
 
     // CONSOLE CONFIG
     HWND consoleWindow = GetConsoleWindow();
+
     SetWindowPos(consoleWindow, 0, 550, 160, 0, 0, SWP_NOSIZE | SWP_NOZORDER);
 
     HANDLE wHnd = GetStdHandle(STD_OUTPUT_HANDLE);
@@ -46,7 +49,7 @@ void title()
     printf("                            |XX\\         _____         /XX| \n");
     printf("                            |XXX\\     _/       \\_    /XXX| \n");
     printf("                             \\XXXXXXX             XXXXXXX/ \n");
-    printf("                               \\XXXX     \\     /   XXXXX/ \n");
+    printf("                               \\XXXX    \\     /    XXXXX/ \n");
     printf("                                    |   0     0   | \n");
     printf("                                     |           | \n");
     printf("                                      \\         / \n");
@@ -57,8 +60,13 @@ void title()
 
 // main functions
 
-void criarBaralho(Pilha *baralho)
+void inicializarBaralho(Pilha *baralho)
 {
+    Carta temp;
+    while (!vaziaPilha(baralho)) {
+        int res = removerPilha(baralho, &temp);
+    }
+
     Carta novaCarta;
     for (int i = 1; i <= CARDS; i++) {
         novaCarta.numero = i;
@@ -77,9 +85,41 @@ void criarBaralho(Pilha *baralho)
     }
 }
 
-void iniciarRound(Lista *mao, Fila **mesa, Pilha *baralho, Lista **colecao)
+void iniciarRound(Lista *mao, Fila **mesa, Pilha *baralho, Lista **colecao, int jogadores)
 {
-    criarBaralho(baralho);
+    Carta temp;
+    int res;
+
+    inicializarBaralho(baralho);
 
     embaralhar(baralho);
+
+    // inicializar colecao
+    colecao = (Lista **) malloc(jogadores * sizeof(Lista *));
+    for (int i = 0; i < jogadores; i++) {
+        colecao[i] = criar();
+        for (int j = 0; j < IND_CARDS; j++) {
+            res = removerPilha(baralho, &temp);
+            temp.jogador = i;
+            res = inserirOrdenado(colecao[i], temp);
+        }
+        printf("\n");
+        res = exibirLista(colecao[i]);
+    }
+
+    // inicializar mesa
+    mesa = (Fila **) malloc(FILAS * sizeof(Fila *));
+    for (int i = 0; i < FILAS; i++) {
+        mesa[i] = criarFila();
+        res = removerPilha(baralho, &temp);
+        temp.jogador = 11; // no player
+        res = inserirFila(mesa[i], temp);
+    }
+
+    // mão do jogador
+    *mao = colecao[0];
+
+    for (int i = 0; i < 4; i++)
+        res = exibirFila(mesa[i]);
+
 }
