@@ -36,8 +36,10 @@ Pilha *criarPilha()
 {
     Pilha *pe;
     pe = (Pilha *) malloc(sizeof(Pilha));
+
     if (pe != NULL)
         *pe = NULL;
+
     return pe;
 }
 
