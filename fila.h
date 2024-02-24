@@ -1,5 +1,5 @@
 
-typedef struct fila *Fila;
+typedef struct fila Fila;
 
 Fila *criarFila();
 int inserirFila(Fila *, struct carta);

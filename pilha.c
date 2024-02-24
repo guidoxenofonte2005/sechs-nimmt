@@ -1,7 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "pilha.h"
+#include <time.h>
 #include "uni_game.h"
+#include "pilha.h"
+
+#define CARDS 104
 
 /**
   * criar - OK
@@ -10,6 +13,7 @@
   * embaralhar -
   * tamanhoPilha - OK
   */
+
 struct elementoPilha
 {
     struct carta carta;
@@ -73,7 +77,49 @@ int removerPilha(Pilha *pe, struct carta *cartaRemovida)
 
 void embaralhar(Pilha *pe)
 {
+    if (vaziaPilha(pe))
+        return 0;
+    else {
+        for (int i = 0; i < CARDS; i++) {
+            int random = rand() % (CARDS - 1);
+            ElementoPilha *ant = NULL;
+            ElementoPilha *aux = *pe;
 
+            for (int j = 0; j < random; j++) {
+                ant = aux;
+                aux = aux->prox;
+            }
+
+            ElementoPilha *pos = aux;
+            ElementoPilha *fim = pos->prox;
+
+            if (fim->prox != NULL) {
+                while (fim->prox != NULL) {
+                    pos = fim;
+                    fim = fim->prox;
+                }
+                if (random != 0) {
+                    fim->prox = aux->prox;
+                    ant->prox = fim;
+                    pos->prox = aux;
+                    aux->prox = NULL;
+                }
+                else {
+                    fim->prox = aux->prox;
+                    pos->prox = aux;
+                    aux->prox = NULL;
+                    *pe = fim;
+                }
+            }
+            else {
+                ant->prox = fim;
+                fim->prox = aux;
+                aux->prox = NULL;
+            }
+        }
+    }
+
+    return 1;
 }
 
 int tamanhoPilha(Pilha *pe)

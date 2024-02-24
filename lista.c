@@ -67,7 +67,7 @@ int inserirOrdenado(Lista *ldse, struct carta novaCarta)
     return 1;
 }
 
-int removerIndice(Lista *ldse, int i)
+int removerIndice(Lista *ldse, int i, struct carta * cartaRemovida)
 {
     if (vazia(ldse))
         return 0;
@@ -77,15 +77,23 @@ int removerIndice(Lista *ldse, int i)
         int cont = 0;
         Elemento *ant = NULL;
         Elemento *aux = *ldse;
-        while (aux != NULL && i != cont) {
-            cont++;
-            ant = aux;
-            aux = aux->prox;
+        if (i == 0) {
+            *ldse = aux->prox;
+            *cartaRemovida = aux->carta;
+            free(aux);
         }
-        if (aux == NULL)
-            return 0;
-        ant->prox = aux->prox;
-        free(aux);
+        else {
+            while (aux != NULL && i != cont) {
+                cont++;
+                ant = aux;
+                aux = aux->prox;
+            }
+            if (aux == NULL)
+                return 0;
+            ant->prox = aux->prox;
+            *cartaRemovida = aux->carta;
+            free(aux);
+        }
     }
     return 1;
 }
@@ -114,7 +122,6 @@ int exibirLista(Lista *ldse)
 {
     if (vazia(ldse))
         return 0;
-    Elemento *aux = *ldse;
     struct carta temp;
     for (int i = 0; i < quantidade(ldse); i++) {
         int res = acessarIndice(ldse, i, &temp);
