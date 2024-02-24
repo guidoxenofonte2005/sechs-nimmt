@@ -35,6 +35,10 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="fila.h" />
+		<Unit filename="game_code.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="game_code.h" />
 		<Unit filename="lista.c">
 			<Option compilerVar="CC" />
 		</Unit>
@@ -46,9 +50,6 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="pilha.h" />
-		<Unit filename="uni_game.c">
-			<Option compilerVar="CC" />
-		</Unit>
 		<Unit filename="uni_game.h" />
 		<Extensions>
 			<lib_finder disable_auto="1" />
