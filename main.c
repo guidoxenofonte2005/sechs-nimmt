@@ -24,7 +24,7 @@ int main()
     // CONFIG / DEBUG FUNCTIONS
     //debugColor();
     config();
-    title();
+    //title();
 
     // GAME STARTING POINT
     do {
@@ -35,11 +35,11 @@ int main()
 
     pontos = (int *) malloc(jogadores * sizeof(int));
 
-    for (int i = 0; i < ROUNDS; i++) {
-        Mao = criar();
-        Baralho = criarPilha();
-        RunGame(Mao, Mesa, Baralho, ColecaoJogadores, jogadores, pontos);
-    }
+    //for (int i = 0; i < ROUNDS; i++) {
+    Mao = criar();
+    Baralho = criarPilha();
+    RunGame(Mao, Mesa, Baralho, ColecaoJogadores, jogadores, pontos);
+    //}
 
     return 0;
 }
