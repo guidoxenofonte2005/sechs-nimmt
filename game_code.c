@@ -135,6 +135,26 @@ void jogadaCPU(Lista ** colecao, int jogadores, Lista *cartasJogadas)
     }
 }
 
+void sortInsert(Fila **mesa, Lista *cartasJogadas)
+{
+    Carta temp, tempFila, menor;
+    int change = 0, res, anterior;
+
+    for (int i = 0; i < quantidade(cartasJogadas); i++) {
+        res = acessarIndice(cartasJogadas, i, &temp);
+        for (int j = 0; j < FILAS; j++) {
+            res = acessarFila(mesa[j], &tempFila);
+            if (j == 0) {
+                anterior = j;
+                menor = tempFila;
+            }
+            else {
+                if (tempFila.numero )
+            }
+        }
+    }
+}
+
 void RunGame(Lista *mao, Fila **mesa, Pilha *baralho, Lista **colecao, int jogadores, int *pontuacao)
 {
     Carta temp;
@@ -190,6 +210,9 @@ void RunGame(Lista *mao, Fila **mesa, Pilha *baralho, Lista **colecao, int jogad
 
     printf("Cartas jogadas: ");
     exibirLista(played);
+    Sleep(1200);
+
+    sortInsert(mesa, played);
 
 
 }

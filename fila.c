@@ -88,7 +88,7 @@ int acessarFila(Fila *fd, struct carta *cartaAcessada)
     if (vaziaFila(fd))
         return 0;
     else {
-        *cartaAcessada = fd->inicio->carta;
+        *cartaAcessada = fd->fim->carta;
         return 1;
     }
 }
