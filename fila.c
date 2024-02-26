@@ -79,43 +79,45 @@ int removerFila(Fila *fd, struct carta *cartaRemovida)
         fd->inicio = fd->inicio->prox;
         if (fd->inicio == NULL)
             fd->fim = NULL;
+        *cartaRemovida = aux->carta;
         free(aux);
         return 1;
     }
 }
 
-int acessarFila(Fila *fd, struct carta *cartaAcessada)
+int acessarFila(Fila *fd, int pos, struct carta *cartaAcessada)
 {
     if (vaziaFila(fd))
         return 0;
     else {
-        *cartaAcessada = fd->fim->carta;
+        ElementoFila *aux = fd->inicio;
+        for (int i = 0; i < pos; i++) {
+            aux = aux->prox;
+        }
+        *cartaAcessada = aux->carta;
         return 1;
     }
 }
 
 int exibirFila(Fila *fd)
 {
+    int res;
+    struct carta temp, cartaAcessada;
+
     if (vaziaFila(fd))
         return 0;
-    struct carta temp;
     for (int i = 0; i < tamanhoFila(fd); i++) {
-        ElementoFila *res = fd->inicio;
-        while (res != fd);
-        {
-            if (res->carta.numero < 10)
-                printf("[  %d]", res->carta.numero);
-            else if (res->carta.numero >= 10 && res->carta.numero < 100)
-                printf("[ %d]", res->carta.numero);
-            else
-                printf("[%d]", res->carta.numero);
-
-            if (i != tamanhoFila(fd)-1)
-                printf("->");
-            else
-                printf("\n");
-            res = res->prox;
-        }
+        res = acessarFila(fd, i, &cartaAcessada);
+        if (cartaAcessada.numero < 10)
+            printf("[  %d]", cartaAcessada.numero);
+        else if (cartaAcessada.numero >= 10 && cartaAcessada.numero < 100)
+            printf("[ %d]", cartaAcessada.numero);
+        else
+            printf("[%d]", cartaAcessada.numero);
+        if (i != tamanhoFila(fd)-1)
+            printf("->");
+        else
+            printf("\n");
     }
     return 1;
 }

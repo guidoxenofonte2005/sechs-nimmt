@@ -78,7 +78,7 @@ void title()
     color(15);
 }
 
-// main functions
+// game functions
 
 void inicializarBaralho(Pilha *baralho)
 {
@@ -139,14 +139,35 @@ void jogadaCPU(Lista ** colecao, int jogadores, Lista *cartasJogadas)
     }
 }
 
-void selectPoints(Fila **mesa, int *pontuacao)
+void selectPoints(Fila **mesa, int *pontuacao, Carta cartaInserida)
 {
+    Carta temp;
+    int choice, res;
+    printf("Digite a fila a ser removida e adicionada a seus pontos: ");
+    do {
+        fflush(stdin);
+        scanf("%d", &choice);
+    } while (choice < 1 || choice > FILAS);
 
+    res = removerFila(mesa[choice-1], &temp);
+    pontuacao[0] += temp.bois;
+    res = inserirFila(mesa[choice-1], cartaInserida);
+}
+
+void cpuSelectPoints(Fila **mesa, int *pontuacao, int jogador, Carta cartaInserida)
+{
+    Carta temp;
+    int random = rand() % FILAS;
+    int res;
+
+    res = removerFila(mesa[random], &temp);
+    pontuacao[jogador] += temp.bois;
+    res = inserirFila(mesa[random], cartaInserida);
 }
 
 void sortInsert(Fila **mesa, Lista *cartasJogadas, int *pontuacao)
 {
-    Carta temp, tempFila;
+    Carta temp, tempFila, placeholder;
     int change = 0, res, anterior, menor = 0;
 
     for (int i = 0; i < quantidade(cartasJogadas); i++) {
@@ -154,32 +175,42 @@ void sortInsert(Fila **mesa, Lista *cartasJogadas, int *pontuacao)
         menor = 0;
         anterior = -1;
         for (int j = 0; j < FILAS; j++) {
-            res = acessarFila(mesa[j], &tempFila);
+            res = acessarFila(mesa[j], tamanhoFila(mesa[j])-1, &tempFila);
             if (tempFila.numero < temp.numero && (temp.numero - tempFila.numero) < (temp.numero - menor)) {
                 anterior = j;
                 menor = tempFila.numero;
             }
         }
-        // printf("%d - %d, ", menor, anterior);
+        // printf("%d - %d, ", menor, anterior); // debug
         if (anterior == -1 && temp.jogador == 0) {
-            // printf("anterior -1 ");
+            selectPoints(mesa, pontuacao, temp);
         }
         else if (anterior == -1 && temp.jogador != 0) {
-            // codigo pra o cpu escolher aleatoriamente uma posição
+            cpuSelectPoints(mesa, pontuacao, temp.jogador, temp);
+        }
+        else if (tamanhoFila(mesa[anterior]) != 5){
+            res = inserirFila(mesa[anterior], temp);
         }
         else {
-            printf("%d, %d, %d\n", temp.numero, temp.bois, temp.jogador);
-            Sleep(5000);
+            while (tamanhoFila(mesa[anterior]) != 0) {
+                res = removerFila(mesa[anterior], &placeholder);
+                pontuacao[temp.jogador] += placeholder.bois;
+            }
             res = inserirFila(mesa[anterior], temp);
-            exibirFila(mesa[anterior]);
-            printf("%d", tamanhoFila(mesa[anterior]));
         }
+        /*
+        for (int k = 0; k < FILAS; k++) {
+            res = exibirFila(mesa[k]);
+        }
+        Sleep(1000);
+        //*/
     }
 }
 
+// main function
 void RunGame(Lista *mao, Fila **mesa, Pilha *baralho, Lista **colecao, int jogadores, int *pontuacao)
 {
-    Carta temp;
+    Carta temp, placeholder;
     Lista *played = NULL;
     int res;
 
@@ -213,37 +244,44 @@ void RunGame(Lista *mao, Fila **mesa, Pilha *baralho, Lista **colecao, int jogad
     }
 
     printf("\n");
-    /* mão do jogador
+    /* debug hands
     for (int i = 0; i < jogadores; i++) {
         res = exibirLista(colecao[i]);
         printf("\n");
     }
-    */
+    //*/
 
+    // mão do jogador
     mao = colecao[0];
 
     // colocar todo o código abaixo em um loop
-    for (int i = 0; i < 4; i++)
-    {
-        res = exibirFila(mesa[i]);
-    }
-    printf("\n\n");
+    for (int w = 0; w < ROUNDS; w++) {
+        for (int i = 0; i < 4; i++)
+        {
+            res = exibirFila(mesa[i]);
+        }
+        printf("\n\n");
 
-    res = exibirLista(mao);
-    printf("\n\n");
+        for (int i = 0; i < quantidade(played); i++) {
+            res = removerIndice(played, i, &placeholder);
+        }
 
-    realizarJogada(mao, played);
-    jogadaCPU(colecao, jogadores, played);
+        res = exibirLista(mao);
+        printf("\n\n");
 
-    printf("Cartas jogadas: ");
-    exibirLista(played);
-    Sleep(1200);
+        realizarJogada(mao, played);
+        jogadaCPU(colecao, jogadores, played);
 
-    sortInsert(mesa, played, pontuacao);
+        printf("Cartas jogadas: ");
+        exibirLista(played);
+        Sleep(1200);
+        printf("\n");
 
-    for (int i = 0; i < 4; i++)
-    {
-        res = exibirFila(mesa[i]);
+        sortInsert(mesa, played, pontuacao);
+
+        for (int a = 0; a < jogadores; a++)
+            printf("%d, ", pontuacao[a]);
+        printf("\n\n");
     }
 }
 /* CHECAR SE PRECISA MSM

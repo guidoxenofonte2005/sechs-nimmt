@@ -31,25 +31,25 @@
 	"lista.h"
 	"uni_game.h"
 
-1708698070 source:c:\users\guido\desktop\projetos guido\sechs nimmt\sechs-nimmt\fila.c
+1708954879 source:c:\users\guido\desktop\projetos guido\sechs nimmt\sechs-nimmt\fila.c
 	<stdio.h>
 	<stdlib.h>
 	"uni_game.h"
 	"fila.h"
 
-1708686916 c:\users\guido\desktop\projetos guido\sechs nimmt\sechs-nimmt\fila.h
+1708948653 c:\users\guido\desktop\projetos guido\sechs nimmt\sechs-nimmt\fila.h
 
-1708686916 source:c:\users\guido\desktop\projetos guido\sechs nimmt\sechs-nimmt\lista.c
+1708945536 source:c:\users\guido\desktop\projetos guido\sechs nimmt\sechs-nimmt\lista.c
 	<stdio.h>
 	<stdlib.h>
 	"uni_game.h"
 	"lista.h"
 
-1708686916 c:\users\guido\desktop\projetos guido\sechs nimmt\sechs-nimmt\uni_game.h
+1708945700 c:\users\guido\desktop\projetos guido\sechs nimmt\sechs-nimmt\uni_game.h
 
-1708686916 c:\users\guido\desktop\projetos guido\sechs nimmt\sechs-nimmt\lista.h
+1708945536 c:\users\guido\desktop\projetos guido\sechs nimmt\sechs-nimmt\lista.h
 
-1708704745 source:c:\users\guido\desktop\projetos guido\sechs nimmt\sechs-nimmt\main.c
+1708945536 source:c:\users\guido\desktop\projetos guido\sechs nimmt\sechs-nimmt\main.c
 	<stdio.h>
 	<stdlib.h>
 	<time.h>
@@ -57,10 +57,11 @@
 	"pilha.h"
 	"fila.h"
 	"uni_game.h"
+	"game_code.h"
 
-1708686916 c:\users\guido\desktop\projetos guido\sechs nimmt\sechs-nimmt\pilha.h
+1708945693 c:\users\guido\desktop\projetos guido\sechs nimmt\sechs-nimmt\pilha.h
 
-1708689797 source:c:\users\guido\desktop\projetos guido\sechs nimmt\sechs-nimmt\pilha.c
+1708945537 source:c:\users\guido\desktop\projetos guido\sechs nimmt\sechs-nimmt\pilha.c
 	<stdio.h>
 	<stdlib.h>
 	<time.h>
@@ -138,4 +139,18 @@
 	"game_code.h"
 
 1708804452 c:\users\guido e ageu\desktop\gido\projetos\sechs nimmt\sechs-nimmt\game_code.h
+
+1708954924 source:c:\users\guido\desktop\projetos guido\sechs nimmt\sechs-nimmt\game_code.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<windows.h>
+	<locale.h>
+	"uni_game.h"
+	"lista.h"
+	"pilha.h"
+	"fila.h"
+	"game_code.h"
+
+1708945536 c:\users\guido\desktop\projetos guido\sechs nimmt\sechs-nimmt\game_code.h
 
