@@ -77,7 +77,7 @@
 	"pilha.h"
 	"fila.h"
 
-1708886829 source:c:\users\guido e ageu\desktop\gido\projetos\sechs nimmt\sechs-nimmt\fila.c
+1708913979 source:c:\users\guido e ageu\desktop\gido\projetos\sechs nimmt\sechs-nimmt\fila.c
 	<stdio.h>
 	<stdlib.h>
 	"uni_game.h"
@@ -125,7 +125,7 @@
 	"pilha.h"
 	"fila.h"
 
-1708891609 source:c:\users\guido e ageu\desktop\gido\projetos\sechs nimmt\sechs-nimmt\game_code.c
+1708913881 source:c:\users\guido e ageu\desktop\gido\projetos\sechs nimmt\sechs-nimmt\game_code.c
 	<stdio.h>
 	<stdlib.h>
 	<time.h>

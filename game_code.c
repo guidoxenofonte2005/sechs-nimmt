@@ -92,6 +92,7 @@ void inicializarBaralho(Pilha *baralho)
     for (int i = 1; i <= CARDS; i++)
     {
         novaCarta.numero = i;
+        novaCarta.jogador = 11; // no player
         int bois = 0;
         if (novaCarta.numero % 5 == 0 && novaCarta.numero % 10 != 0)
             bois += 2;
@@ -167,7 +168,11 @@ void sortInsert(Fila **mesa, Lista *cartasJogadas, int *pontuacao)
             // codigo pra o cpu escolher aleatoriamente uma posição
         }
         else {
+            printf("%d, %d, %d\n", temp.numero, temp.bois, temp.jogador);
+            Sleep(5000);
             res = inserirFila(mesa[anterior], temp);
+            exibirFila(mesa[anterior]);
+            printf("%d", tamanhoFila(mesa[anterior]));
         }
     }
 }
@@ -204,7 +209,6 @@ void RunGame(Lista *mao, Fila **mesa, Pilha *baralho, Lista **colecao, int jogad
     {
         mesa[i] = criarFila();
         res = removerPilha(baralho, &temp);
-        temp.jogador = 11; // no player
         res = inserirFila(mesa[i], temp);
     }
 
@@ -237,7 +241,10 @@ void RunGame(Lista *mao, Fila **mesa, Pilha *baralho, Lista **colecao, int jogad
 
     sortInsert(mesa, played, pontuacao);
 
-
+    for (int i = 0; i < 4; i++)
+    {
+        res = exibirFila(mesa[i]);
+    }
 }
 /* CHECAR SE PRECISA MSM
 int countPoints(int *pontos)

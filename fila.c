@@ -60,8 +60,9 @@ int inserirFila(Fila *fd, struct carta novaCarta)
             return 0;
         novo->carta = novaCarta;
         novo->prox = NULL;
-        if (fd->fim == NULL)
+        if (fd->fim == NULL) {
             fd->inicio = novo;
+        }
         else
             fd->fim->prox = novo;
         fd->fim = novo;
@@ -100,7 +101,7 @@ int exibirFila(Fila *fd)
     struct carta temp;
     for (int i = 0; i < tamanhoFila(fd); i++) {
         ElementoFila *res = fd->inicio;
-        while (res != NULL)
+        while (res != fd);
         {
             if (res->carta.numero < 10)
                 printf("[  %d]", res->carta.numero);
