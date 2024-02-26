@@ -78,6 +78,15 @@ void title()
     color(15);
 }
 
+void presentTurn(int turn)
+{
+    system("cls");
+    printf("\n\n\n\n\n");
+    printf("\t\t\t\t ROUND - %d", turn);
+    Sleep(3000);
+    system("cls");
+}
+
 // game functions
 
 void inicializarBaralho(Pilha *baralho)
@@ -116,6 +125,7 @@ void realizarJogada(Lista *mao, Lista *cartasJogadas)
     do
     {
         printf("Digite a carta: ");
+        fflush(stdin);
         scanf("%d", &escolha);
     }
     while (escolha < 1 || escolha > 10);
@@ -143,14 +153,16 @@ void selectPoints(Fila **mesa, int *pontuacao, Carta cartaInserida)
 {
     Carta temp;
     int choice, res;
-    printf("Digite a fila a ser removida e adicionada a seus pontos: ");
     do {
+        printf("Digite a fila a ser removida e adicionada a seus pontos: ");
         fflush(stdin);
         scanf("%d", &choice);
     } while (choice < 1 || choice > FILAS);
 
-    res = removerFila(mesa[choice-1], &temp);
-    pontuacao[0] += temp.bois;
+    while (!vaziaFila(mesa[choice-1])) {
+        res = removerFila(mesa[choice-1], &temp);
+        pontuacao[0] += temp.bois;
+    }
     res = inserirFila(mesa[choice-1], cartaInserida);
 }
 
@@ -255,16 +267,18 @@ void RunGame(Lista *mao, Fila **mesa, Pilha *baralho, Lista **colecao, int jogad
     mao = colecao[0];
 
     // colocar todo o código abaixo em um loop
-    for (int w = 0; w < ROUNDS; w++) {
+    //for (int w = 0; w < ROUNDS; w++) {
         for (int i = 0; i < 4; i++)
         {
             res = exibirFila(mesa[i]);
         }
         printf("\n\n");
 
-        for (int i = 0; i < quantidade(played); i++) {
+        for (int i = quantidade(played)-1; i >= 0; i--) {
             res = removerIndice(played, i, &placeholder);
         }
+
+        res = exibirLista(played);
 
         res = exibirLista(mao);
         printf("\n\n");
@@ -280,9 +294,12 @@ void RunGame(Lista *mao, Fila **mesa, Pilha *baralho, Lista **colecao, int jogad
         sortInsert(mesa, played, pontuacao);
 
         for (int a = 0; a < jogadores; a++)
-            printf("%d, ", pontuacao[a]);
+        {
+            int num = pontuacao[a];
+            printf("%d, ", num);
+        }
         printf("\n\n");
-    }
+    //}
 }
 /* CHECAR SE PRECISA MSM
 int countPoints(int *pontos)

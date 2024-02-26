@@ -49,7 +49,7 @@
 
 1708945536 c:\users\guido\desktop\projetos guido\sechs nimmt\sechs-nimmt\lista.h
 
-1708945536 source:c:\users\guido\desktop\projetos guido\sechs nimmt\sechs-nimmt\main.c
+1708968331 source:c:\users\guido\desktop\projetos guido\sechs nimmt\sechs-nimmt\main.c
 	<stdio.h>
 	<stdlib.h>
 	<time.h>
@@ -140,7 +140,7 @@
 
 1708804452 c:\users\guido e ageu\desktop\gido\projetos\sechs nimmt\sechs-nimmt\game_code.h
 
-1708954924 source:c:\users\guido\desktop\projetos guido\sechs nimmt\sechs-nimmt\game_code.c
+1708968320 source:c:\users\guido\desktop\projetos guido\sechs nimmt\sechs-nimmt\game_code.c
 	<stdio.h>
 	<stdlib.h>
 	<time.h>
@@ -152,5 +152,5 @@
 	"fila.h"
 	"game_code.h"
 
-1708945536 c:\users\guido\desktop\projetos guido\sechs nimmt\sechs-nimmt\game_code.h
+1708968232 c:\users\guido\desktop\projetos guido\sechs nimmt\sechs-nimmt\game_code.h
 

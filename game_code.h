@@ -4,10 +4,7 @@ void config();
 void debugColor();
 
 void title();
-
-void inicializarBaralho(Pilha *);
-void realizarJogada(Lista *, Lista *);
-void jogadaCPU(Lista **, int, Lista *);
+void presentTurn(int);
 
 void RunGame(Lista *, Fila **, Pilha *, Lista **, int, int *);
 

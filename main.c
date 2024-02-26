@@ -24,7 +24,7 @@ int main()
     // CONFIG / DEBUG FUNCTIONS
     //debugColor();
     config();
-    //title();
+    title();
 
     // GAME STARTING POINT
     do {
@@ -33,13 +33,20 @@ int main()
         scanf("%d", &jogadores);
     } while (jogadores < 2 || jogadores > 10);
 
-    pontos = (int *) malloc(jogadores * sizeof(int));
+    system("cls");
 
-    //for (int i = 0; i < ROUNDS; i++) {
-    Mao = criar();
-    Baralho = criarPilha();
-    RunGame(Mao, Mesa, Baralho, ColecaoJogadores, jogadores, pontos);
-    //}
+    pontos = (int *) malloc(jogadores * sizeof(int));
+    for (int i = 0; i < jogadores; i++)
+        pontos[i] = 0;
+
+    for (int i = 0; i < ROUNDS; i++) {
+        presentTurn(i+1);
+        Mao = criar();
+        Baralho = criarPilha();
+        RunGame(Mao, Mesa, Baralho, ColecaoJogadores, jogadores, pontos);
+    }
+
+    system("cls");
 
     return 0;
 }
