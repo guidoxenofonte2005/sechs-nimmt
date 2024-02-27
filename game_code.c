@@ -81,8 +81,8 @@ void title()
 void presentTurn(int turn)
 {
     system("cls");
-    printf("\n\n\n\n\n");
-    printf("\t\t\t\t ROUND - %d", turn);
+    printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
+    printf("\t\t\t\t\t ROUND - %d", turn);
     Sleep(3000);
     system("cls");
 }
@@ -172,8 +172,10 @@ void cpuSelectPoints(Fila **mesa, int *pontuacao, int jogador, Carta cartaInseri
     int random = rand() % FILAS;
     int res;
 
-    res = removerFila(mesa[random], &temp);
-    pontuacao[jogador] += temp.bois;
+    while (!vaziaFila(mesa[random])) {
+        res = removerFila(mesa[random], &temp);
+        pontuacao[jogador] += temp.bois;
+    }
     res = inserirFila(mesa[random], cartaInserida);
 }
 
@@ -267,7 +269,8 @@ void RunGame(Lista *mao, Fila **mesa, Pilha *baralho, Lista **colecao, int jogad
     mao = colecao[0];
 
     // colocar todo o código abaixo em um loop
-    //for (int w = 0; w < ROUNDS; w++) {
+    for (int w = 0; w < ROUNDS; w++) {
+        //system("cls");
         for (int i = 0; i < 4; i++)
         {
             res = exibirFila(mesa[i]);
@@ -299,11 +302,19 @@ void RunGame(Lista *mao, Fila **mesa, Pilha *baralho, Lista **colecao, int jogad
             printf("%d, ", num);
         }
         printf("\n\n");
-    //}
+    }
 }
-/* CHECAR SE PRECISA MSM
-int countPoints(int *pontos)
-{
 
+// ending functions
+int countPoints(int *pontuacao, int jogadores)
+{
+    int menor;
+    for (int i = 0; i < jogadores; i++)
+    {
+        if (i == 0)
+            menor = 0;
+        else if (pontuacao[i] < pontuacao[menor])
+            menor = i;
+    }
+    return menor;
 }
-*/

@@ -18,7 +18,7 @@ int main()
     Fila ** Mesa;
     Pilha * Baralho;
     Lista ** ColecaoJogadores;
-    int jogadores = 0;
+    int jogadores, winner;
     int *pontos;
 
     // CONFIG / DEBUG FUNCTIONS
@@ -46,7 +46,9 @@ int main()
         RunGame(Mao, Mesa, Baralho, ColecaoJogadores, jogadores, pontos);
     }
 
-    system("cls");
+    winner = countPoints(pontos, jogadores);
+
+    printf("O vencedor foi o jogador %d", winner);
 
     return 0;
 }
