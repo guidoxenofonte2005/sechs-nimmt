@@ -1,0 +1,1 @@
+beta-1.0 -- first playable version of the game, simple graphics and no cool features whatsoever
