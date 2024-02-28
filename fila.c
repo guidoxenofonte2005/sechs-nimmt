@@ -102,23 +102,35 @@ int acessarFila(Fila *fd, int pos, struct carta *cartaAcessada)
 int exibirFila(Fila *fd)
 {
     int res;
-    struct carta temp, cartaAcessada;
+    struct carta cartaAcessada;
 
     if (vaziaFila(fd))
         return 0;
-    for (int i = 0; i < tamanhoFila(fd); i++) {
-        res = acessarFila(fd, i, &cartaAcessada);
-        if (cartaAcessada.numero < 10)
-            printf("[  %d]", cartaAcessada.numero);
-        else if (cartaAcessada.numero >= 10 && cartaAcessada.numero < 100)
-            printf("[ %d]", cartaAcessada.numero);
-        else
-            printf("[%d]", cartaAcessada.numero);
-        if (i != tamanhoFila(fd)-1)
-            printf("->");
-        else
-            printf("\n");
+    for (int j = 0; j < tamanhoFila(fd); j++) {
+        printf(".--=-=--.");
     }
+    printf("\n");
+    for (int j = 0; j < tamanhoFila(fd); j++) {
+        printf("|       |");
+    }
+    printf("\n");
+    for (int j = 0; j < tamanhoFila(fd); j++) {
+        res = acessarFila(fd, j, &cartaAcessada);
+        if (cartaAcessada.numero < 10)
+            printf("|   %d   |", cartaAcessada.numero);
+        else if (cartaAcessada.numero >= 10 && cartaAcessada.numero < 100)
+            printf("|   %d  |", cartaAcessada.numero);
+        else
+            printf("|  %d  |", cartaAcessada.numero);
+    }
+    printf("\n");
+    for (int j = 0; j < tamanhoFila(fd); j++) {
+        printf("|       |");
+    }
+    printf("\n");
+    for (int j = 0; j < tamanhoFila(fd); j++)
+        printf("\'--=-=--\'");
+    printf("\n\n");
     return 1;
 }
 

@@ -13,6 +13,10 @@
 #define IND_CARDS 10
 #define FILAS 4
 #define ROUNDS 10
+
+#define MIN_SIZE 32
+
+#define STYLE_LD_DOTS 3
 // aux/aesthetic functions
 
 void color(int cor)
@@ -31,14 +35,13 @@ void config()
     SetWindowPos(consoleWindow, 0, 550, 160, 0, 0, SWP_NOSIZE | SWP_NOZORDER);
 
     HANDLE wHnd = GetStdHandle(STD_OUTPUT_HANDLE);
-    SMALL_RECT windowSize = {0, 0, 89, 40};
+    SMALL_RECT windowSize = {0, 0, 89, 50};
     SetConsoleWindowInfo(wHnd, 1, &windowSize);
-
 }
 
 void debugColor()
 {
-    for (int i = 0; i < 16; i++)
+    for (int i = 1; i < 16; i++)
     {
         color(i);
         printf("[%d] - ", i);
@@ -82,11 +85,83 @@ void presentTurn(int turn)
 {
     system("cls");
     printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
+    color(4);
     printf("\t\t\t\t\t ROUND - %d", turn);
+    color(15);
     Sleep(3000);
     system("cls");
 }
 
+void loadingScreen()
+{
+    int time = rand() % 10 + 1;
+    for (int i = 0; i < time; i++)
+    {
+        int interval = rand() % 400 + 1;
+        system("cls");
+        printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
+        color(8);
+        printf("\t\t\t\t\t Loading");
+        for (int j = 0; j < STYLE_LD_DOTS; j++)
+        {
+            Sleep(interval);
+            printf(".");
+            Sleep(100);
+        }
+    }
+}
+
+void showPoints(int * pontuacao, int jogadores)
+{
+    system("cls");
+    printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
+    color(12);
+    printf("\t\t\t\t\t Pontuação:\n");
+    color(8);
+    printf("\t\t\t\t\t - Você - %d -\n", pontuacao[0]);
+    for (int i = 1; i < jogadores; i++)
+        printf("\t\t\t\t\t - CPU%d - %d -\n", i, pontuacao[i]);
+    color(15);
+    Sleep(3000);
+    system("cls");
+}
+
+int titleOptions()
+{
+    int opt;
+
+    printf("\n\n\t\t\t\t 1. Jogar\n");
+    Sleep(500);
+    printf("\t\t\t\t 2. Regras\n");
+    Sleep(500);
+    printf("\t\t\t\t 3. Opções\n");
+    Sleep(400);
+    do {
+        printf("\t\t\t\t Digite sua escolha: ");
+        fflush(stdin);
+        scanf("%d", &opt);
+    } while (opt < 1 || opt > 3);
+
+    switch (opt)
+    {
+    case 1:
+        return 1;
+        break;
+    case 2:
+        //rules();
+        break;
+    case 3:
+        //options();
+        break;
+    }
+
+    return 0;
+}
+
+void rules()
+{
+
+}
 // game functions
 
 void inicializarBaralho(Pilha *baralho)
@@ -124,6 +199,7 @@ void realizarJogada(Lista *mao, Lista *cartasJogadas)
 
     do
     {
+        fflush(stdin);
         printf("Digite a carta: ");
         fflush(stdin);
         scanf("%d", &escolha);
@@ -270,12 +346,12 @@ void RunGame(Lista *mao, Fila **mesa, Pilha *baralho, Lista **colecao, int jogad
 
     // colocar todo o código abaixo em um loop
     for (int w = 0; w < ROUNDS; w++) {
-        //system("cls");
+        system("cls");
         for (int i = 0; i < 4; i++)
         {
             res = exibirFila(mesa[i]);
         }
-        printf("\n\n");
+        printf("\n");
 
         for (int i = quantidade(played)-1; i >= 0; i--) {
             res = removerIndice(played, i, &placeholder);
@@ -284,12 +360,11 @@ void RunGame(Lista *mao, Fila **mesa, Pilha *baralho, Lista **colecao, int jogad
         res = exibirLista(played);
 
         res = exibirLista(mao);
-        printf("\n\n");
 
         realizarJogada(mao, played);
         jogadaCPU(colecao, jogadores, played);
 
-        printf("Cartas jogadas: ");
+        printf("\t\tCartas jogadas: \n");
         exibirLista(played);
         Sleep(1200);
         printf("\n");

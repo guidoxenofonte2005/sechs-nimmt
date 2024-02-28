@@ -120,21 +120,36 @@ int acessarIndice(Lista *ldse, int i, struct carta *carta)
 
 int exibirLista(Lista *ldse)
 {
+    struct carta cartaAcessada;
+    int res;
+
     if (vazia(ldse))
         return 0;
-    struct carta temp;
-    for (int i = 0; i < quantidade(ldse); i++) {
-        int res = acessarIndice(ldse, i, &temp);
-        if (temp.numero < 10)
-            printf("[  %d]", temp.numero);
-        else if (temp.numero >= 10 && temp.numero < 100)
-            printf("[ %d]", temp.numero);
-        else
-            printf("[%d]", temp.numero);
-
-        if (i != quantidade(ldse)-1)
-            printf("->");
+    for (int j = 0; j < quantidade(ldse); j++) {
+        printf(".--=-=--.");
     }
+    printf("\n");
+    for (int j = 0; j < quantidade(ldse); j++) {
+        printf("|       |");
+    }
+    printf("\n");
+    for (int j = 0; j < quantidade(ldse); j++) {
+        res = acessarIndice(ldse, j, &cartaAcessada);
+        if (cartaAcessada.numero < 10)
+            printf("|   %d   |", cartaAcessada.numero);
+        else if (cartaAcessada.numero >= 10 && cartaAcessada.numero < 100)
+            printf("|   %d  |", cartaAcessada.numero);
+        else
+            printf("|  %d  |", cartaAcessada.numero);
+    }
+    printf("\n");
+    for (int j = 0; j < quantidade(ldse); j++) {
+        printf("|       |");
+    }
+    printf("\n");
+    for (int j = 0; j < quantidade(ldse); j++)
+        printf("\'--=-=--\'");
+    printf("\n\n");
     return 1;
 }
 

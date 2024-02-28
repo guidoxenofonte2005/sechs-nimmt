@@ -20,11 +20,16 @@ int main()
     Lista ** ColecaoJogadores;
     int jogadores, winner;
     int *pontos;
+    int play;
 
     // CONFIG / DEBUG FUNCTIONS
     //debugColor();
     config();
-    title();
+    do {
+        title();
+        play = titleOptions();
+    } while (play != 1);
+
 
     // GAME STARTING POINT
     do {
@@ -39,8 +44,13 @@ int main()
     for (int i = 0; i < jogadores; i++)
         pontos[i] = 0;
 
+    loadingScreen();
+    system("cls");
+
     for (int i = 0; i < ROUNDS; i++) {
         presentTurn(i+1);
+        if (i != 0)
+            showPoints(pontos, jogadores);
         Mao = criar();
         Baralho = criarPilha();
         RunGame(Mao, Mesa, Baralho, ColecaoJogadores, jogadores, pontos);
