@@ -31,13 +31,13 @@
 	"lista.h"
 	"uni_game.h"
 
-1709126145 source:c:\users\guido\desktop\projetos guido\sechs nimmt\sechs-nimmt\fila.c
+1709205673 source:c:\users\guido\desktop\projetos guido\sechs nimmt\sechs-nimmt\fila.c
 	<stdio.h>
 	<stdlib.h>
 	"uni_game.h"
 	"fila.h"
 
-1709055089 c:\users\guido\desktop\projetos guido\sechs nimmt\sechs-nimmt\fila.h
+1709205674 c:\users\guido\desktop\projetos guido\sechs nimmt\sechs-nimmt\fila.h
 
 1709126219 source:c:\users\guido\desktop\projetos guido\sechs nimmt\sechs-nimmt\lista.c
 	<stdio.h>
@@ -45,7 +45,7 @@
 	"uni_game.h"
 	"lista.h"
 
-1709055089 c:\users\guido\desktop\projetos guido\sechs nimmt\sechs-nimmt\uni_game.h
+1709205674 c:\users\guido\desktop\projetos guido\sechs nimmt\sechs-nimmt\uni_game.h
 
 1709055089 c:\users\guido\desktop\projetos guido\sechs nimmt\sechs-nimmt\lista.h
 
