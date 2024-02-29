@@ -17,6 +17,7 @@
 #define MIN_SIZE 32
 
 #define STYLE_LD_DOTS 3
+
 // aux/aesthetic functions
 
 void color(int cor)
@@ -35,7 +36,7 @@ void config()
     SetWindowPos(consoleWindow, 0, 550, 160, 0, 0, SWP_NOSIZE | SWP_NOZORDER);
 
     HANDLE wHnd = GetStdHandle(STD_OUTPUT_HANDLE);
-    SMALL_RECT windowSize = {0, 0, 89, 40};
+    SMALL_RECT windowSize = {0, 0, 89, 45};
     SetConsoleWindowInfo(wHnd, 1, &windowSize);
 }
 
@@ -53,7 +54,8 @@ void debugColor()
 void title()
 {
     color(8);
-    printf("\404=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=\404\n");
+    printf("\404=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=\404\n");
+    Sleep(800);
     color(4);
     printf("     _______ _______ _______ __   __ _______      __    _ ___ __   __ __   __ _______ \n");
     printf("    |       |       |       |  | |  |       |    |  |  | |   |  |_|  |  |_|  |       |\n");
@@ -62,22 +64,25 @@ void title()
     printf("    |_____  |    ___|      _|       |_____  |    |  _    |   |       |       | |   |  \n");
     printf("     _____| |   |___|     |_|   _   |_____| |    | | |   |   | ||_|| | ||_|| | |   |  \n");
     printf("    |_______|_______|_______|__| |__|_______|    |_|  |__|___|_|   |_|_|   |_| |___|  \n\n");
+    Sleep(800);
     color(9);
-    printf("                                   /                       \\ \n");
-    printf("                                 /X/                       \\X\\ \n");
-    printf("                                |XX\\         ____         /XX| \n");
-    printf("                                |XXX\\     _/      \\_    /XXX| \n");
-    printf("                                 \\XXXXXXX            XXXXXXX/ \n");
-    printf("                                   \\XXXX    \\    /    XXXXX/ \n");
-    printf("                                        |   0    0   | \n");
-    printf("                                         |          | \n");
-    printf("                                         \\          / \n");
-    printf("                                          \\        / \n");
-    printf("                                           |,O__O,| \n");
-    printf("                                           \\ ---- /  \n");
-    printf("                                            \\ __ /\n");
+    printf("                                 /                       \\ \n");
+    printf("                               /X/                       \\X\\ \n");
+    printf("                              |XX\\         ____         /XX| \n");
+    printf("                              |XXX\\     _/      \\_    /XXX| \n");
+    printf("                               \\XXXXXXX            XXXXXXX/ \n");
+    printf("                                 \\XXXX    \\    /    XXXXX/ \n");
+    printf("                                      |   0    0   | \n");
+    printf("                                       |          | \n");
+    printf("                                       \\          / \n");
+    printf("                                        \\        / \n");
+    printf("                                         |,O__O,| \n");
+    printf("                                         \\ ---- /  \n");
+    printf("                                          \\ __ /\n");
     color(8);
-    printf("\404=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=\404\n");
+    Sleep(800);
+    printf("\404=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=\404\n");
+    Sleep(800);
     color(15);
 }
 
@@ -94,7 +99,7 @@ void presentTurn(int turn)
 
 void loadingScreen()
 {
-    int time = rand() % 10 + 1;
+    int time = rand() % 4 + 1;
     for (int i = 0; i < time; i++)
     {
         int interval = rand() % 400 + 1;
@@ -174,11 +179,11 @@ void rules()
 
     printf("\t\tOBJETIVO DO JOGO \t      ||\t     EXEMPLO DE CARTA\n\t\t\t\t\t      ||\n");
     printf("    O objetivo do jogo é pegar cartas. Cada   ||\t.--=-=--.\n");
-    printf(" carta que você pega lhe rende um ponto nega- ||\t|\402 \402 \402 \402|\n");
-    printf(" tivo para cada cabeça de boi impressa sobre  ||\t| \402 \402 \402 |\n");
+    printf(" carta que você pega lhe rende um ponto nega- ||\t|%% %% %% %%|\n");
+    printf(" tivo para cada cabeça de boi impressa sobre  ||\t| %% %% %% |\n");
     printf(" a carta. O jogador com menos pontos após al- ||\t|   55--|-> N° da carta\n");
-    printf(" gumas rodadas é o vencedor.                  ||\t| \402 \402 \402 |\n");
-    printf("                                              ||\t|\402 \402 \402 \402|--> Bois/pontuação\n");
+    printf(" gumas rodadas é o vencedor.                  ||\t| %% %% %% |\n");
+    printf("                                              ||\t|%% %% %% %%|--> Bois/pontuação\n");
     printf("                                              ||\t\'--=-=--\'\n");
     printf("\404=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=\404\n");
     printf("\t\t   COMO JOGAR \t\t      ||\t     PEGANDO UMA FILA\n");
@@ -203,7 +208,7 @@ void options()
 {
     system("cls");
     color(8);
-    printf("\404=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=\404\n");
+    printf("\404=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=\404\n");
     color(4);
     printf("                      ______  ______  ______  ______  ______  ______\n");
     printf("                     /\\  __ \\/\\  == \\/\\  ___\\/\\  __ \\/\\  ___\\/\\  ___\\\n");
@@ -211,8 +216,34 @@ void options()
     printf("                      \\ \\_____\\ \\_\\   \\ \\_____\\ \\_____\\ \\_____\\/\\_____\\\n");
     printf("                       \\/_____/\\/_/    \\/_____/\\/_____/\\/_____/\\/_____/\n\n");
     color(8);
-    printf("\404=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=\404\n");
-    printf("Linhas - 40 Colunas - 90 Tamanho da fonte - 10");
+    printf("\404=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=\404\n");
+    printf("   _    _ _           _                     ||   _    _ _           _                      \n");
+    printf("  | |  | (_)         | |                    ||  | |  | (_)         | |                     \n");
+    printf("  | |  | |_ _ __   __| | _____      _____   ||  | |  | |_ _ __   __| | _____      _____    \n");
+    printf("  | |/\\| | | '_ \\ / _` |/ _ \\ \\ /\\ / / __|  ||  | |/\\| | | '_ \\ / _` |/ _ \\ \\ /\\ / / __|   \n");
+    printf("  \\  /\\  | | | | | (_| | (_) \\ V  V /\\__ \\  ||  \\  /\\  | | | | | (_| | (_) \\ V  V /\\__ \\   \n");
+    printf("   \\/  \\/|_|_| |_|\\__,_|\\___/ \\_/\\_/ |___/  ||   \\/  \\/|_|_| |_|\\__,_|\\___/ \\_/\\_/ |___/   \n");
+    printf("                 __  _____                  ||                 __  __  \n");
+    printf("                /  ||  _  |                 ||                /  |/  | \n");
+    printf("                `| || |/' |                 ||                `| |`| | \n");
+    printf("                _| |\\ |_/ /                 ||                _| |_| |_\n");
+    printf("                \\___/\\___/                  ||                \\___\\___/\n");
+    printf("                                            ||\n");
+    printf("   Todas as configurações para o SO já fo-  ||   1 - Digite \'cmd\' na barra de pesquisas;\n");
+    printf("  ram realizadas pelo código. Aproveite!    ||   2 - Clique na seta presente ao lado do\n");
+    printf("                                            ||  título do console e entre nas Configura-\n");
+    printf("          _     _                           ||  ções;\n");
+    printf("         | |   (_)                          ||   3 - Desça até a área \'Tamanho de inici-\n");
+    printf("         | |    _ _ __  _   ___  __         ||  alização\' e ajuste as dimensões para 90\n");
+    printf("         | |   | | '_ \\| | | \\ \\/ /         ||  colunas e 45 linhas;\n");
+    printf("         | |___| | | | | |_| |>  <          ||   4 - Na coluna lateral, na área \'Perfis\',\n");
+    printf("         \\_____|_|_| |_|\\__,_/_/\\_\\         ||  acesse o perfil \'Padrões\' e entre na á-\n");
+    printf("                                            ||  rea \'Aparência\';\n");
+    printf("   Delete o sistema operacional e realize   ||   5 - Altere o tamanho da fonte para 9;\n");
+    printf("  a instalação do Windows 10/11...          ||   6 - Aproveite!\n");
+    printf("\404=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=\404\n");
+    color(15);
+    printf("\t\t\t\tDigite ENTER para voltar: ");
     fflush(stdin);
     getchar();
     system("cls");
@@ -223,25 +254,25 @@ void credits()
     Sleep(500);
     color(4);
     printf("\n\n\n\n\n\n\n\n\n\n\n\n");
-    printf("\t     ______  __   __    ______  ______  __    __  ______  ______\n");
-    printf("\t    /\\  ___\\/\\ \\ / /   /\\  ___\\/\\  __ \\/\\ \"-./  \\/\\  ___\\/\\  ___\\\n");
-    printf("\t    \\ \\ \\__ \\ \\ \\\'/    \\ \\ \\__ \\ \\  __ \\ \\ \\-./\\ \\ \\  __\\\\ \\___  \\\n");
-    printf("\t     \\ \\_____\\ \\__|     \\ \\_____\\ \\_\\ \\_\\ \\_\\ \\ \\_\\ \\_____\\/\\_____\\\n");
-    printf("\t      \\/_____/\\/_/       \\/_____/\\/_/\\/_/\\/_/  \\/_/\\/_____/\\/_____/\n\n");
+    printf("\t     ______  __  __     ______  ______  __    __  ______  ______\n");
+    printf("\t    /\\  ___\\/\\_\\_\\_\\   /\\  ___\\/\\  __ \\/\\ \"-./  \\/\\  ___\\/\\  ___\\\n");
+    printf("\t    \\ \\ \\__ \\/_/\\_\\/_  \\ \\ \\__ \\ \\  __ \\ \\ \\-./\\ \\ \\  __\\\\ \\___  \\\n");
+    printf("\t     \\ \\_____\\/\\_\\|\\_\\  \\ \\_____\\ \\_\\ \\_\\ \\_\\ \\ \\_\\ \\_____\\/\\_____\\\n");
+    printf("\t      \\/_____/\\/_/\\/_/   \\/_____/\\/_/\\/_/\\/_/  \\/_/\\/_____/\\/_____/\n\n");
     printf("\t     ______  ______  ______  ______  ______  __   __  ______  ______\n");
     printf("\t    /\\  == \\/\\  == \\/\\  ___\\/\\  ___\\/\\  ___\\/\\ \"-.\\ \\/\\__  _\\/\\  ___\\\n");
     printf("\t    \\ \\  _-/\\ \\  __<\\ \\  __\\\\ \\___  \\ \\  __\\\\ \\ \\-.  \\/_/\\ \\/\\ \\___  \\\n");
     printf("\t     \\ \\_\\   \\ \\_\\ \\_\\ \\_____\\/\\_____\\ \\_____\\ \\_\\\\\"\\_\\ \\ \\_\\ \\/\\_____\\\n");
     printf("\t      \\/_/    \\/_/ /_/\\/_____/\\/_____/\\/_____/\\/_/ \\/_/  \\/_/  \\/_____/\n");
-    Sleep(1500);
+    Sleep(2500);
     system("cls");
     color(12);
     printf("\n\n\n\n\n\n\n\n\n\n\n\n");
-    printf("\t     ______  __   __    ______  ______  __    __  ______  ______\n");
-    printf("\t    /\\  ___\\/\\ \\ / /   /\\  ___\\/\\  __ \\/\\ \"-./  \\/\\  ___\\/\\  ___\\\n");
-    printf("\t    \\ \\ \\__ \\ \\ \\\'/    \\ \\ \\__ \\ \\  __ \\ \\ \\-./\\ \\ \\  __\\\\ \\___  \\\n");
-    printf("\t     \\ \\_____\\ \\__|     \\ \\_____\\ \\_\\ \\_\\ \\_\\ \\ \\_\\ \\_____\\/\\_____\\\n");
-    printf("\t      \\/_____/\\/_/       \\/_____/\\/_/\\/_/\\/_/  \\/_/\\/_____/\\/_____/\n\n");
+    printf("\t     ______  __  __     ______  ______  __    __  ______  ______\n");
+    printf("\t    /\\  ___\\/\\_\\_\\_\\   /\\  ___\\/\\  __ \\/\\ \"-./  \\/\\  ___\\/\\  ___\\\n");
+    printf("\t    \\ \\ \\__ \\/_/\\_\\/_  \\ \\ \\__ \\ \\  __ \\ \\ \\-./\\ \\ \\  __\\\\ \\___  \\\n");
+    printf("\t     \\ \\_____\\/\\_\\|\\_\\  \\ \\_____\\ \\_\\ \\_\\ \\_\\ \\ \\_\\ \\_____\\/\\_____\\\n");
+    printf("\t      \\/_____/\\/_/\\/_/   \\/_____/\\/_/\\/_/\\/_/  \\/_/\\/_____/\\/_____/\n\n");
     printf("\t     ______  ______  ______  ______  ______  __   __  ______  ______\n");
     printf("\t    /\\  == \\/\\  == \\/\\  ___\\/\\  ___\\/\\  ___\\/\\ \"-.\\ \\/\\__  _\\/\\  ___\\\n");
     printf("\t    \\ \\  _-/\\ \\  __<\\ \\  __\\\\ \\___  \\ \\  __\\\\ \\ \\-.  \\/_/\\ \\/\\ \\___  \\\n");
@@ -251,11 +282,11 @@ void credits()
     system("cls");
     color(15);
     printf("\n\n\n\n\n\n\n\n\n\n\n\n");
-    printf("\t     ______  __   __    ______  ______  __    __  ______  ______\n");
-    printf("\t    /\\  ___\\/\\ \\ / /   /\\  ___\\/\\  __ \\/\\ \"-./  \\/\\  ___\\/\\  ___\\\n");
-    printf("\t    \\ \\ \\__ \\ \\ \\\'/    \\ \\ \\__ \\ \\  __ \\ \\ \\-./\\ \\ \\  __\\\\ \\___  \\\n");
-    printf("\t     \\ \\_____\\ \\__|     \\ \\_____\\ \\_\\ \\_\\ \\_\\ \\ \\_\\ \\_____\\/\\_____\\\n");
-    printf("\t      \\/_____/\\/_/       \\/_____/\\/_/\\/_/\\/_/  \\/_/\\/_____/\\/_____/\n\n");
+    printf("\t     ______  __  __     ______  ______  __    __  ______  ______\n");
+    printf("\t    /\\  ___\\/\\_\\_\\_\\   /\\  ___\\/\\  __ \\/\\ \"-./  \\/\\  ___\\/\\  ___\\\n");
+    printf("\t    \\ \\ \\__ \\/_/\\_\\/_  \\ \\ \\__ \\ \\  __ \\ \\ \\-./\\ \\ \\  __\\\\ \\___  \\\n");
+    printf("\t     \\ \\_____\\/\\_\\|\\_\\  \\ \\_____\\ \\_\\ \\_\\ \\_\\ \\ \\_\\ \\_____\\/\\_____\\\n");
+    printf("\t      \\/_____/\\/_/\\/_/   \\/_____/\\/_/\\/_/\\/_/  \\/_/\\/_____/\\/_____/\n\n");
     printf("\t     ______  ______  ______  ______  ______  __   __  ______  ______\n");
     printf("\t    /\\  == \\/\\  == \\/\\  ___\\/\\  ___\\/\\  ___\\/\\ \"-.\\ \\/\\__  _\\/\\  ___\\\n");
     printf("\t    \\ \\  _-/\\ \\  __<\\ \\  __\\\\ \\___  \\ \\  __\\\\ \\ \\-.  \\/_/\\ \\/\\ \\___  \\\n");
@@ -265,11 +296,11 @@ void credits()
     system("cls");
     color(8);
     printf("\n\n\n\n\n\n\n\n\n\n\n\n");
-    printf("\t     ______  __   __    ______  ______  __    __  ______  ______\n");
-    printf("\t    /\\  ___\\/\\ \\ / /   /\\  ___\\/\\  __ \\/\\ \"-./  \\/\\  ___\\/\\  ___\\\n");
-    printf("\t    \\ \\ \\__ \\ \\ \\\'/    \\ \\ \\__ \\ \\  __ \\ \\ \\-./\\ \\ \\  __\\\\ \\___  \\\n");
-    printf("\t     \\ \\_____\\ \\__|     \\ \\_____\\ \\_\\ \\_\\ \\_\\ \\ \\_\\ \\_____\\/\\_____\\\n");
-    printf("\t      \\/_____/\\/_/       \\/_____/\\/_/\\/_/\\/_/  \\/_/\\/_____/\\/_____/\n\n");
+    printf("\t     ______  __  __     ______  ______  __    __  ______  ______\n");
+    printf("\t    /\\  ___\\/\\_\\_\\_\\   /\\  ___\\/\\  __ \\/\\ \"-./  \\/\\  ___\\/\\  ___\\\n");
+    printf("\t    \\ \\ \\__ \\/_/\\_\\/_  \\ \\ \\__ \\ \\  __ \\ \\ \\-./\\ \\ \\  __\\\\ \\___  \\\n");
+    printf("\t     \\ \\_____\\/\\_\\|\\_\\  \\ \\_____\\ \\_\\ \\_\\ \\_\\ \\ \\_\\ \\_____\\/\\_____\\\n");
+    printf("\t      \\/_____/\\/_/\\/_/   \\/_____/\\/_/\\/_/\\/_/  \\/_/\\/_____/\\/_____/\n\n");
     printf("\t     ______  ______  ______  ______  ______  __   __  ______  ______\n");
     printf("\t    /\\  == \\/\\  == \\/\\  ___\\/\\  ___\\/\\  ___\\/\\ \"-.\\ \\/\\__  _\\/\\  ___\\\n");
     printf("\t    \\ \\  _-/\\ \\  __<\\ \\  __\\\\ \\___  \\ \\  __\\\\ \\ \\-.  \\/_/\\ \\/\\ \\___  \\\n");
@@ -277,8 +308,76 @@ void credits()
     printf("\t      \\/_/    \\/_/ /_/\\/_____/\\/_____/\\/_____/\\/_/ \\/_/  \\/_/  \\/_____/\n");
     Sleep(100);
     system("cls");
-    Sleep(500);
+    Sleep(200);
 }
+
+void revealCards(int jogadores, Lista *played)
+{
+    int espacos;
+    espacos = ((10 - jogadores) * 4);
+
+    system("cls");
+    printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
+    printf("\t\t\t\t    CARTAS JOGADAS:\n");
+    Sleep(500);
+    for (int i = 0; i < espacos; i++)
+        printf(" ");
+
+    for (int i = 0; i < jogadores; i++)
+        printf(".--=-=--.");
+
+    printf("\n");
+    for (int i = 0; i < espacos; i++)
+        printf(" ");
+
+    for (int i = 0; i < jogadores; i++)
+        printf("|\\     /|");
+
+    printf("\n");
+    for (int i = 0; i < espacos; i++)
+        printf(" ");
+
+    for (int i = 0; i < jogadores; i++)
+        printf("|\\\\~~~//|");
+
+    printf("\n");
+    for (int i = 0; i < espacos; i++)
+        printf(" ");
+
+    for (int i = 0; i < jogadores; i++)
+        printf("|\'\\o o/\'|");
+
+    printf("\n");
+    for (int i = 0; i < espacos; i++)
+        printf(" ");
+
+    for (int i = 0; i < jogadores; i++)
+        printf("| (._.) |");
+
+    printf("\n");
+    for (int i = 0; i < espacos; i++)
+        printf(" ");
+
+    for (int i = 0; i < jogadores; i++)
+        printf("|  \\_/  |");
+
+    printf("\n");
+    for (int i = 0; i < espacos; i++)
+        printf(" ");
+
+    for (int i = 0; i < jogadores; i++)
+        printf("\'--=-=--\'");
+
+    Sleep(1200);
+    system("cls");
+
+    printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
+    printf("\t\t\t\t    CARTAS JOGADAS:\n");
+    int res = exibirLista(played);
+
+    Sleep(1500);
+}
+
 // game functions
 
 void inicializarBaralho(Pilha *baralho)
@@ -476,23 +575,21 @@ void RunGame(Lista *mao, Fila **mesa, Pilha *baralho, Lista **colecao, int jogad
 
         res = exibirLista(played);
 
+        printf("\t\t\t\t         SUA MÃO:\n");
         res = exibirLista(mao);
 
         realizarJogada(mao, played);
         jogadaCPU(colecao, jogadores, played);
 
-        printf("\t\tCartas jogadas: \n");
-        exibirLista(played);
+        Sleep(500);
+
+        revealCards(jogadores, played);
+
         Sleep(1200);
         printf("\n");
 
         sortInsert(mesa, played, pontuacao);
 
-        for (int a = 0; a < jogadores; a++)
-        {
-            int num = pontuacao[a];
-            printf("%d, ", num);
-        }
         printf("\n\n");
     }
 }

@@ -101,7 +101,7 @@ int acessarFila(Fila *fd, int pos, struct carta *cartaAcessada)
 
 int exibirFila(Fila *fd)
 {
-    int res;
+    int res, bois;
     struct carta cartaAcessada;
 
     if (vaziaFila(fd))
@@ -111,7 +111,56 @@ int exibirFila(Fila *fd)
     }
     printf("\n");
     for (int j = 0; j < tamanhoFila(fd); j++) {
-        printf("|       |");
+        res = acessarFila(fd, j, &cartaAcessada);
+        printf("|");
+        bois = cartaAcessada.bois;
+        switch (bois)
+        {
+        case 1:
+            printf("   %%   |");
+            break;
+        case 2:
+            printf("  %% %%  |");
+            break;
+        case 3:
+            printf(" %% %% %% |");
+            break;
+        case 4:
+            printf("%% %% %% %%|");
+            break;
+        case 5:
+            printf(" %% %% %% |");
+            break;
+        case 6:
+            printf(" %% %% %% |");
+            break;
+        case 7:
+            printf("%% %% %% %%|");
+            break;
+        default:
+            break;
+        }
+    }
+    printf("\n");
+    for (int j = 0; j < tamanhoFila(fd); j++) {
+        res = acessarFila(fd, j, &cartaAcessada);
+        printf("|");
+        bois = cartaAcessada.bois;
+        switch (bois)
+        {
+        case 5:
+            printf("  %% %%  |");
+            break;
+        case 6:
+            printf(" %% %% %% |");
+            break;
+        case 7:
+            printf(" %% %% %% |");
+            break;
+        default:
+            printf("       |");
+            break;
+        }
     }
     printf("\n");
     for (int j = 0; j < tamanhoFila(fd); j++) {
@@ -125,12 +174,62 @@ int exibirFila(Fila *fd)
     }
     printf("\n");
     for (int j = 0; j < tamanhoFila(fd); j++) {
-        printf("|       |");
+        res = acessarFila(fd, j, &cartaAcessada);
+        printf("|");
+        bois = cartaAcessada.bois;
+        switch (bois)
+        {
+        case 5:
+            printf("  %% %%  |");
+            break;
+        case 6:
+            printf(" %% %% %% |");
+            break;
+        case 7:
+            printf(" %% %% %% |");
+            break;
+        default:
+            printf("       |");
+            break;
+        }
+    }
+    printf("\n");
+    for (int j = 0; j < tamanhoFila(fd); j++) {
+        res = acessarFila(fd, j, &cartaAcessada);
+        printf("|");
+        bois = cartaAcessada.bois;
+        switch (bois)
+        {
+        case 1:
+            printf("   %%   |");
+            break;
+        case 2:
+            printf("  %% %%  |");
+            break;
+        case 3:
+            printf(" %% %% %% |");
+            break;
+        case 4:
+            printf("%% %% %% %%|");
+            break;
+        case 5:
+            printf(" %% %% %% |");
+            break;
+        case 6:
+            printf(" %% %% %% |");
+            break;
+        case 7:
+            printf("%% %% %% %%|");
+            break;
+        default:
+            break;
+        }
     }
     printf("\n");
     for (int j = 0; j < tamanhoFila(fd); j++)
         printf("\'--=-=--\'");
     printf("\n\n");
+
     return 1;
 }
 

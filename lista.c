@@ -121,18 +121,81 @@ int acessarIndice(Lista *ldse, int i, struct carta *carta)
 int exibirLista(Lista *ldse)
 {
     struct carta cartaAcessada;
-    int res;
+    int res, bois, espacos;
 
     if (vazia(ldse))
         return 0;
+
+
+    espacos = ((10 - quantidade(ldse)) * 4);
+    for (int i = 0; i < espacos; i++)
+        printf(" ");
+
     for (int j = 0; j < quantidade(ldse); j++) {
         printf(".--=-=--.");
     }
+
+
     printf("\n");
+    for (int i = 0; i < espacos; i++)
+        printf(" ");
     for (int j = 0; j < quantidade(ldse); j++) {
-        printf("|       |");
+        res = acessarIndice(ldse, j, &cartaAcessada);
+        printf("|");
+        bois = cartaAcessada.bois;
+        switch (bois)
+        {
+        case 1:
+            printf("   %%   |");
+            break;
+        case 2:
+            printf("  %% %%  |");
+            break;
+        case 3:
+            printf(" %% %% %% |");
+            break;
+        case 4:
+            printf("%% %% %% %%|");
+            break;
+        case 5:
+            printf(" %% %% %% |");
+            break;
+        case 6:
+            printf(" %% %% %% |");
+            break;
+        case 7:
+            printf("%% %% %% %%|");
+            break;
+        default:
+            break;
+        }
     }
     printf("\n");
+    for (int i = 0; i < espacos; i++)
+        printf(" ");
+    for (int j = 0; j < quantidade(ldse); j++) {
+        res = acessarIndice(ldse, j, &cartaAcessada);
+        printf("|");
+        bois = cartaAcessada.bois;
+        switch (bois)
+        {
+        case 5:
+            printf("  %% %%  |");
+            break;
+        case 6:
+            printf(" %% %% %% |");
+            break;
+        case 7:
+            printf(" %% %% %% |");
+            break;
+        default:
+            printf("       |");
+            break;
+        }
+    }
+    printf("\n");
+    for (int i = 0; i < espacos; i++)
+        printf(" ");
     for (int j = 0; j < quantidade(ldse); j++) {
         res = acessarIndice(ldse, j, &cartaAcessada);
         if (cartaAcessada.numero < 10)
@@ -143,13 +206,75 @@ int exibirLista(Lista *ldse)
             printf("|  %d  |", cartaAcessada.numero);
     }
     printf("\n");
+    for (int i = 0; i < espacos; i++)
+        printf(" ");
     for (int j = 0; j < quantidade(ldse); j++) {
-        printf("|       |");
+        res = acessarIndice(ldse, j, &cartaAcessada);
+        printf("|");
+        bois = cartaAcessada.bois;
+        switch (bois)
+        {
+        case 5:
+            printf("  %% %%  |");
+            break;
+        case 6:
+            printf(" %% %% %% |");
+            break;
+        case 7:
+            printf(" %% %% %% |");
+            break;
+        default:
+            printf("       |");
+            break;
+        }
     }
     printf("\n");
+    for (int i = 0; i < espacos; i++)
+        printf(" ");
+    for (int j = 0; j < quantidade(ldse); j++) {
+        res = acessarIndice(ldse, j, &cartaAcessada);
+        printf("|");
+        bois = cartaAcessada.bois;
+        switch (bois)
+        {
+        case 1:
+            printf("   %%   |");
+            break;
+        case 2:
+            printf("  %% %%  |");
+            break;
+        case 3:
+            printf(" %% %% %% |");
+            break;
+        case 4:
+            printf("%% %% %% %%|");
+            break;
+        case 5:
+            printf(" %% %% %% |");
+            break;
+        case 6:
+            printf(" %% %% %% |");
+            break;
+        case 7:
+            printf("%% %% %% %%|");
+            break;
+        default:
+            break;
+        }
+    }
+    printf("\n");
+    for (int i = 0; i < espacos; i++)
+        printf(" ");
     for (int j = 0; j < quantidade(ldse); j++)
         printf("\'--=-=--\'");
-    printf("\n\n");
+    printf("\n");
+
+    for (int i = 0; i < espacos; i++)
+        printf(" ");
+
+    for (int i = 1; i <= quantidade(ldse); i++)
+        printf("   (%d)   ", i);
+    printf("\n");
     return 1;
 }
 

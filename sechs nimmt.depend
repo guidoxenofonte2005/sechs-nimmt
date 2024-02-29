@@ -78,25 +78,25 @@
 	"pilha.h"
 	"fila.h"
 
-1709166836 source:c:\users\guido e ageu\desktop\gido\projetos\sechs nimmt\sechs-nimmt\fila.c
+1709245320 source:c:\users\guido e ageu\desktop\gido\projetos\sechs nimmt\sechs-nimmt\fila.c
 	<stdio.h>
 	<stdlib.h>
 	"uni_game.h"
 	"fila.h"
 
-1709166836 c:\users\guido e ageu\desktop\gido\projetos\sechs nimmt\sechs-nimmt\fila.h
+1709216200 c:\users\guido e ageu\desktop\gido\projetos\sechs nimmt\sechs-nimmt\fila.h
 
-1709166836 c:\users\guido e ageu\desktop\gido\projetos\sechs nimmt\sechs-nimmt\uni_game.h
+1709216200 c:\users\guido e ageu\desktop\gido\projetos\sechs nimmt\sechs-nimmt\uni_game.h
 
-1709166836 source:c:\users\guido e ageu\desktop\gido\projetos\sechs nimmt\sechs-nimmt\lista.c
+1709245559 source:c:\users\guido e ageu\desktop\gido\projetos\sechs nimmt\sechs-nimmt\lista.c
 	<stdio.h>
 	<stdlib.h>
 	"uni_game.h"
 	"lista.h"
 
-1709166836 c:\users\guido e ageu\desktop\gido\projetos\sechs nimmt\sechs-nimmt\lista.h
+1709216200 c:\users\guido e ageu\desktop\gido\projetos\sechs nimmt\sechs-nimmt\lista.h
 
-1709170588 source:c:\users\guido e ageu\desktop\gido\projetos\sechs nimmt\sechs-nimmt\main.c
+1709245609 source:c:\users\guido e ageu\desktop\gido\projetos\sechs nimmt\sechs-nimmt\main.c
 	<stdio.h>
 	<stdlib.h>
 	<time.h>
@@ -106,9 +106,9 @@
 	"uni_game.h"
 	"game_code.h"
 
-1709166836 c:\users\guido e ageu\desktop\gido\projetos\sechs nimmt\sechs-nimmt\pilha.h
+1709216200 c:\users\guido e ageu\desktop\gido\projetos\sechs nimmt\sechs-nimmt\pilha.h
 
-1709166836 source:c:\users\guido e ageu\desktop\gido\projetos\sechs nimmt\sechs-nimmt\pilha.c
+1709216200 source:c:\users\guido e ageu\desktop\gido\projetos\sechs nimmt\sechs-nimmt\pilha.c
 	<stdio.h>
 	<stdlib.h>
 	<time.h>
@@ -126,7 +126,7 @@
 	"pilha.h"
 	"fila.h"
 
-1709172799 source:c:\users\guido e ageu\desktop\gido\projetos\sechs nimmt\sechs-nimmt\game_code.c
+1709245602 source:c:\users\guido e ageu\desktop\gido\projetos\sechs nimmt\sechs-nimmt\game_code.c
 	<stdio.h>
 	<stdlib.h>
 	<time.h>
@@ -138,7 +138,7 @@
 	"fila.h"
 	"game_code.h"
 
-1709166836 c:\users\guido e ageu\desktop\gido\projetos\sechs nimmt\sechs-nimmt\game_code.h
+1709216200 c:\users\guido e ageu\desktop\gido\projetos\sechs nimmt\sechs-nimmt\game_code.h
 
 1709205674 source:c:\users\guido\desktop\projetos guido\sechs nimmt\sechs-nimmt\game_code.c
 	<stdio.h>

@@ -1,3 +1,4 @@
 beta-1.0 -- first playable version of the game, simple graphics and no cool features whatsoever
 beta-1.1 -- UI/UX improvement
 beta-1.1v3 -- UI/UX improvement, added beta rules/options system
+beta-1.2 -- UI/UX improvement, added definitive rules/options system
