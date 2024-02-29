@@ -154,3 +154,54 @@
 
 1709205674 c:\users\guido\desktop\projetos guido\sechs nimmt\sechs-nimmt\game_code.h
 
+1709207009 source:c:\users\ufca\desktop\liberada\projeto pega em 6 - guido\fila.c
+	<stdio.h>
+	<stdlib.h>
+	"uni_game.h"
+	"fila.h"
+
+1709207009 c:\users\ufca\desktop\liberada\projeto pega em 6 - guido\uni_game.h
+
+1709207009 c:\users\ufca\desktop\liberada\projeto pega em 6 - guido\fila.h
+
+1709215521 source:c:\users\ufca\desktop\liberada\projeto pega em 6 - guido\game_code.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<windows.h>
+	<locale.h>
+	"uni_game.h"
+	"lista.h"
+	"pilha.h"
+	"fila.h"
+	"game_code.h"
+
+1709207009 c:\users\ufca\desktop\liberada\projeto pega em 6 - guido\lista.h
+
+1709207009 c:\users\ufca\desktop\liberada\projeto pega em 6 - guido\pilha.h
+
+1709215500 c:\users\ufca\desktop\liberada\projeto pega em 6 - guido\game_code.h
+
+1709207009 source:c:\users\ufca\desktop\liberada\projeto pega em 6 - guido\lista.c
+	<stdio.h>
+	<stdlib.h>
+	"uni_game.h"
+	"lista.h"
+
+1709207009 source:c:\users\ufca\desktop\liberada\projeto pega em 6 - guido\pilha.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	"uni_game.h"
+	"pilha.h"
+
+1709215275 source:c:\users\ufca\desktop\liberada\projeto pega em 6 - guido\main.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	"lista.h"
+	"pilha.h"
+	"fila.h"
+	"uni_game.h"
+	"game_code.h"
+

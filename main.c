@@ -25,9 +25,7 @@ int main()
     // CONFIG / DEBUG FUNCTIONS
     //debugColor();
     config();
-    for (int i = 0; i < 40; i++)
-        printf("%d\n", i);
-    Sleep(120312930192309);
+    credits();
     do {
         title();
         play = titleOptions();
