@@ -2,19 +2,29 @@
 <CodeBlocks_layout_file>
 	<FileVersion major="1" minor="0" />
 	<ActiveTarget name="Debug" />
+	<File name="main.c" open="1" top="1" tabpos="1" split="0" active="1" splitpos="0" zoom_1="6" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="557" topLine="21" />
+		</Cursor>
+	</File>
+	<File name="pilha.c" open="0" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="6" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="2543" topLine="75" />
+		</Cursor>
+	</File>
+	<File name="uni_game.h" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="6" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="71" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="lista.c" open="0" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="6" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="3480" topLine="119" />
+		</Cursor>
+	</File>
 	<File name="fila.c" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="6" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="2004" topLine="114" />
-		</Cursor>
-	</File>
-	<File name="fila.h" open="0" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="6" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="161" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="main.c" open="1" top="1" tabpos="1" split="0" active="1" splitpos="0" zoom_1="6" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="544" topLine="18" />
 		</Cursor>
 	</File>
 	<File name="game_code.c" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="6" zoom_2="0">
@@ -30,34 +40,24 @@
 			<Collapse line="114" />
 		</Folding>
 	</File>
-	<File name="lista.c" open="0" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="6" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="3480" topLine="119" />
-		</Cursor>
-	</File>
 	<File name="game_code.h" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="6" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="140" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="pilha.h" open="0" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="6" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="148" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="uni_game.h" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="6" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="71" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="pilha.c" open="0" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="6" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="2543" topLine="75" />
-		</Cursor>
-	</File>
 	<File name="lista.h" open="0" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="6" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="143" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="fila.h" open="0" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="6" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="161" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="pilha.h" open="0" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="6" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="148" topLine="0" />
 		</Cursor>
 	</File>
 </CodeBlocks_layout_file>
