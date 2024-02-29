@@ -35,7 +35,7 @@ void config()
     SetWindowPos(consoleWindow, 0, 550, 160, 0, 0, SWP_NOSIZE | SWP_NOZORDER);
 
     HANDLE wHnd = GetStdHandle(STD_OUTPUT_HANDLE);
-    SMALL_RECT windowSize = {0, 0, 89, 50};
+    SMALL_RECT windowSize = {0, 0, 89, 40};
     SetConsoleWindowInfo(wHnd, 1, &windowSize);
 }
 
@@ -63,19 +63,19 @@ void title()
     printf("     _____| |   |___|     |_|   _   |_____| |    | | |   |   | ||_|| | ||_|| | |   |  \n");
     printf("    |_______|_______|_______|__| |__|_______|    |_|  |__|___|_|   |_|_|   |_| |___|  \n\n");
     color(9);
-    printf("                                  /                       \\ \n");
-    printf("                                /X/                       \\X\\ \n");
-    printf("                               |XX\\         ____         /XX| \n");
-    printf("                               |XXX\\     _/      \\_    /XXX| \n");
-    printf("                                \\XXXXXXX            XXXXXXX/ \n");
-    printf("                                  \\XXXX    \\    /    XXXXX/ \n");
-    printf("                                       |   0    0   | \n");
-    printf("                                        |          | \n");
-    printf("                                        \\          / \n");
-    printf("                                         \\        / \n");
-    printf("                                          |,O__O,| \n");
-    printf("                                          \\ ---- /  \n");
-    printf("                                           \\ __ /\n");
+    printf("                                   /                       \\ \n");
+    printf("                                 /X/                       \\X\\ \n");
+    printf("                                |XX\\         ____         /XX| \n");
+    printf("                                |XXX\\     _/      \\_    /XXX| \n");
+    printf("                                 \\XXXXXXX            XXXXXXX/ \n");
+    printf("                                   \\XXXX    \\    /    XXXXX/ \n");
+    printf("                                        |   0    0   | \n");
+    printf("                                         |          | \n");
+    printf("                                         \\          / \n");
+    printf("                                          \\        / \n");
+    printf("                                           |,O__O,| \n");
+    printf("                                           \\ ---- /  \n");
+    printf("                                            \\ __ /\n");
     color(14);
     printf("\404=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=\404\n");
     color(15);
@@ -159,6 +159,31 @@ int titleOptions()
 }
 
 void rules()
+{
+    system("cls");
+    color(8);
+    printf("\404=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=\404\n");
+    color(4);
+    printf("                    ______  ______  ______  ______  ______  ______\n");
+    printf("                   /\\  == \\/\\  ___\\/\\  ___\\/\\  == \\/\\  __ \\/\\  ___\\\n");
+    printf("                   \\ \\  __<\\ \\  __\\\\ \\ \\__ \\ \\  __<\\ \\  __ \\ \\___  \\\n");
+    printf("                    \\ \\_\\ \\_\\ \\_____\\ \\_____\\ \\_\\ \\_\\ \\_\\ \\_\\/\\_____\\\n");
+    printf("                     \\/_/ /_/\\/_____/\\/_____/\\/_/ /_/\\/_/\\/_/\\/_____/\n\n");
+    color(8);
+    printf("\404=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=\404\n");
+
+    printf("\t\tOBJETIVO DO JOGO \t      ||\t      EXEMPLO DE CARTA\n\t\t\t\t\t      ||\n");
+    printf("    O objetivo do jogo é pegar cartas. Cada   ||\t.--=-=--.\n");
+    printf(" carta que você pega lhe rende um ponto nega- ||\t|\402 \402 \402 \402|\n");
+    printf(" tivo para cada cabeça de boi impressa sobre  ||\t| \402 \402 \402 |\n");
+    printf(" a carta. O jogador com menos pontos após al- ||\t|   55--|-> N° da carta\n");
+    printf(" gumas rodadas é o vencedor.                  ||\t| \402 \402 \402 |\n");
+    printf("                                              ||\t|\402 \402 \402 \402|--> Bois/pontuação\n");
+    printf("                                              ||\t\'--=-=--\'\n");
+
+}
+
+void options()
 {
 
 }

@@ -25,6 +25,7 @@ int main()
     // CONFIG / DEBUG FUNCTIONS
     //debugColor();
     config();
+    //rules();
     do {
         title();
         play = titleOptions();
