@@ -33,8 +33,21 @@ int main()
 
 
     // GAME STARTING POINT
+    jogadores = 4;
     do {
-        printf("Qtd de jogadores: ");
+        system("cls");
+        if (jogadores < 2 || jogadores > 10) {
+            printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
+            color(4);
+            printf("\t\t\t\t     INSERÇÃO INVÁLIDA!\n");
+            color(8);
+            printf("\t\t\t\t    Número de jogadores: ");
+        }
+        else {
+            printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
+            color(8);
+            printf("\t\t\t\t    Número de jogadores: ");
+        }
         fflush(stdin);
         scanf("%d", &jogadores);
     } while (jogadores < 2 || jogadores > 10);
@@ -48,18 +61,16 @@ int main()
     loadingScreen();
     system("cls");
 
-    for (int i = 0; i < ROUNDS; i++) {
-        presentTurn(i+1);
-        if (i != 0)
-            showPoints(pontos, jogadores);
+    //for (int i = 0; i < ROUNDS; i++) {
+        //presentTurn(i+1);
+//        if (i != 0)
+//            showPoints(pontos, jogadores);
         Mao = criar();
         Baralho = criarPilha();
         RunGame(Mao, Mesa, Baralho, ColecaoJogadores, jogadores, pontos);
-    }
+    //}
 
     winner = countPoints(pontos, jogadores);
-
-    printf("O vencedor foi o jogador %d", winner);
 
     return 0;
 }

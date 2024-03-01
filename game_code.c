@@ -54,7 +54,7 @@ void debugColor()
 void title()
 {
     color(8);
-    printf("\404=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=\404\n");
+    printf("+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=+\n");
     Sleep(800);
     color(4);
     printf("     _______ _______ _______ __   __ _______      __    _ ___ __   __ __   __ _______ \n");
@@ -81,7 +81,7 @@ void title()
     printf("                                          \\ __ /\n");
     color(8);
     Sleep(800);
-    printf("\404=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=\404\n");
+    printf("+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=+\n");
     Sleep(800);
     color(15);
 }
@@ -167,7 +167,7 @@ void rules()
 {
     system("cls");
     color(8);
-    printf("\404=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=\404\n");
+    printf("+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=+\n");
     color(4);
     printf("                    ______  ______  ______  ______  ______  ______\n");
     printf("                   /\\  == \\/\\  ___\\/\\  ___\\/\\  == \\/\\  __ \\/\\  ___\\\n");
@@ -175,7 +175,7 @@ void rules()
     printf("                    \\ \\_\\ \\_\\ \\_____\\ \\_____\\ \\_\\ \\_\\ \\_\\ \\_\\/\\_____\\\n");
     printf("                     \\/_/ /_/\\/_____/\\/_____/\\/_/ /_/\\/_/\\/_/\\/_____/\n\n");
     color(8);
-    printf("\404=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=\404\n");
+    printf("+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=+\n");
 
     printf("\t\tOBJETIVO DO JOGO \t      ||\t     EXEMPLO DE CARTA\n\t\t\t\t\t      ||\n");
     printf("    O objetivo do jogo é pegar cartas. Cada   ||\t.--=-=--.\n");
@@ -208,7 +208,7 @@ void options()
 {
     system("cls");
     color(8);
-    printf("\404=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=\404\n");
+    printf("+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=+\n");
     color(4);
     printf("                      ______  ______  ______  ______  ______  ______\n");
     printf("                     /\\  __ \\/\\  == \\/\\  ___\\/\\  __ \\/\\  ___\\/\\  ___\\\n");
@@ -216,13 +216,13 @@ void options()
     printf("                      \\ \\_____\\ \\_\\   \\ \\_____\\ \\_____\\ \\_____\\/\\_____\\\n");
     printf("                       \\/_____/\\/_/    \\/_____/\\/_____/\\/_____/\\/_____/\n\n");
     color(8);
-    printf("\404=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=\404\n");
-    printf("   _    _ _           _                     ||   _    _ _           _                      \n");
-    printf("  | |  | (_)         | |                    ||  | |  | (_)         | |                     \n");
-    printf("  | |  | |_ _ __   __| | _____      _____   ||  | |  | |_ _ __   __| | _____      _____    \n");
-    printf("  | |/\\| | | '_ \\ / _` |/ _ \\ \\ /\\ / / __|  ||  | |/\\| | | '_ \\ / _` |/ _ \\ \\ /\\ / / __|   \n");
-    printf("  \\  /\\  | | | | | (_| | (_) \\ V  V /\\__ \\  ||  \\  /\\  | | | | | (_| | (_) \\ V  V /\\__ \\   \n");
-    printf("   \\/  \\/|_|_| |_|\\__,_|\\___/ \\_/\\_/ |___/  ||   \\/  \\/|_|_| |_|\\__,_|\\___/ \\_/\\_/ |___/   \n");
+    printf("+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=+\n");
+    printf("   _    _ _           _                     ||   _    _ _           _                   \n");
+    printf("  | |  | (_)         | |                    ||  | |  | (_)         | |                  \n");
+    printf("  | |  | |_ _ __   __| | _____      _____   ||  | |  | |_ _ __   __| | _____      _____ \n");
+    printf("  | |/\\| | | '_ \\ / _` |/ _ \\ \\ /\\ / / __|  ||  | |/\\| | | '_ \\ / _` |/ _ \\ \\ /\\ / / __|\n");
+    printf("  \\  /\\  | | | | | (_| | (_) \\ V  V /\\__ \\  ||  \\  /\\  | | | | | (_| | (_) \\ V  V /\\__ \\\n");
+    printf("   \\/  \\/|_|_| |_|\\__,_|\\___/ \\_/\\_/ |___/  ||   \\/  \\/|_|_| |_|\\__,_|\\___/ \\_/\\_/ |___/\n");
     printf("                 __  _____                  ||                 __  __  \n");
     printf("                /  ||  _  |                 ||                /  |/  | \n");
     printf("                `| || |/' |                 ||                `| |`| | \n");
@@ -241,7 +241,7 @@ void options()
     printf("                                            ||  rea \'Aparência\';\n");
     printf("   Delete o sistema operacional e realize   ||   5 - Altere o tamanho da fonte para 9;\n");
     printf("  a instalação do Windows 10/11...          ||   6 - Aproveite!\n");
-    printf("\404=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=\404\n");
+    printf("+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=+\n");
     color(15);
     printf("\t\t\t\tDigite ENTER para voltar: ");
     fflush(stdin);
@@ -311,13 +311,15 @@ void credits()
     Sleep(200);
 }
 
-void revealCards(int jogadores, Lista *played)
+void revealCards(int jogadores, Lista *played, Fila **mesa)
 {
-    int espacos;
+    int espacos, res;
     espacos = ((10 - jogadores) * 4);
 
     system("cls");
-    printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
+    for (int k = 0; k < FILAS; k++)
+        res = exibirFila(mesa[k]);
+    printf("\n");
     printf("\t\t\t\t    CARTAS JOGADAS:\n");
     Sleep(500);
     for (int i = 0; i < espacos; i++)
@@ -370,14 +372,29 @@ void revealCards(int jogadores, Lista *played)
 
     Sleep(1200);
     system("cls");
-
-    printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
+    for (int k = 0; k < FILAS; k++)
+        res = exibirFila(mesa[k]);
+    printf("\n");
     printf("\t\t\t\t    CARTAS JOGADAS:\n");
-    int res = exibirLista(played);
+    res = exibirLista(played);
 
     Sleep(1500);
+    system("cls");
 }
 
+void revealPoints(int * pontuacao, int jogadores)
+{
+    system("cls");
+    printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
+    color(12);
+    printf("\t\t\t\t\tPontuação:\n");
+    color(7);
+    printf("\t\t\t\t\t Você - %d\n", pontuacao[0]);
+    for (int i = 1; i < jogadores; i++)
+        printf("\t\t\t\t\t CPU%d - %d\n", i, pontuacao[i]);
+    Sleep(3300);
+    system("cls");
+}
 // game functions
 
 void inicializarBaralho(Pilha *baralho)
@@ -475,8 +492,9 @@ void sortInsert(Fila **mesa, Lista *cartasJogadas, int *pontuacao)
 {
     Carta temp, tempFila, placeholder;
     int change = 0, res, anterior, menor = 0;
+    int tamanho = quantidade(cartasJogadas);
 
-    for (int i = 0; i < quantidade(cartasJogadas); i++) {
+    for (int i = 0; i < tamanho; i++) {
         res = acessarIndice(cartasJogadas, i, &temp);
         menor = 0;
         anterior = -1;
@@ -504,12 +522,16 @@ void sortInsert(Fila **mesa, Lista *cartasJogadas, int *pontuacao)
             }
             res = inserirFila(mesa[anterior], temp);
         }
-        /*
         for (int k = 0; k < FILAS; k++) {
             res = exibirFila(mesa[k]);
         }
+
+        printf("\n");
+        printf("\t\t\t\t    CARTAS JOGADAS:\n");
+        res = exibirLista(cartasJogadas);
+
         Sleep(1000);
-        //*/
+        system("cls");
     }
 }
 
@@ -583,14 +605,11 @@ void RunGame(Lista *mao, Fila **mesa, Pilha *baralho, Lista **colecao, int jogad
 
         Sleep(500);
 
-        revealCards(jogadores, played);
-
-        Sleep(1200);
-        printf("\n");
+        revealCards(jogadores, played, mesa);
 
         sortInsert(mesa, played, pontuacao);
 
-        printf("\n\n");
+        revealPoints(pontuacao, jogadores);
     }
 }
 
