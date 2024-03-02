@@ -379,13 +379,11 @@ void revealCards(int jogadores, Lista *played, Fila **mesa)
     res = exibirLista(played);
 
     Sleep(1500);
-    system("cls");
 }
 
 void revealPoints(int * pontuacao, int jogadores)
 {
-    system("cls");
-    printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
+    printf("\n\n\n\n\n\n");
     color(12);
     printf("\t\t\t\t\tPontuação:\n");
     color(7);
@@ -393,7 +391,133 @@ void revealPoints(int * pontuacao, int jogadores)
     for (int i = 1; i < jogadores; i++)
         printf("\t\t\t\t\t CPU%d - %d\n", i, pontuacao[i]);
     Sleep(3300);
-    system("cls");
+}
+
+void victoryScreen(int winner, int * pontuacao, int jogadores)
+{
+    if (winner != 0) {
+        color(8);
+        printf("\n\n");
+        printf("\t\t\t\t\t\t\t   ,\n");
+        printf("\t\t\t\t\t  ");
+        printf("   ____   ");
+        printf("      /u-,\n");
+        printf("\t\t\t\t");
+        printf(" _z/\\     _/      \\_     /XXX|\n");
+        printf("\t\t\t\t");
+        printf(" \\XXXXXXX            XXXXXXX/\n");
+        printf("\t\t\t\t");
+        printf("   \\XXXX    /    \\    XXXXX/\n");
+        printf("\t\t\t\t");
+        printf("        |");
+        color(7);
+        printf("   X    X");
+        color(8);
+        printf("   |        \n");
+        printf("\t\t\t\t");
+        printf("         |          |         \n");
+        printf("\t\t\t\t");
+        printf("         \\          /         \n");
+        printf("\t\t\t\t");
+        printf("          \\        /          \n");
+        printf("\t\t\t\t");
+        printf("           |,O__O,|           \n");
+        printf("\t\t\t\t");
+        printf("           \\ ---- /           \n");
+        printf("\t\t\t\t");
+        printf("            \\ __ /            \n\n");
+        printf("\t\t     ");
+        printf("________\t\t\t\t   __\n");
+        printf("\t\t     ");
+        printf("\\______ \\   __________________  _____/  |______\n");
+        printf("\t\t     ");
+        printf(" |    |  \\_/ __ \\_  __ \\_  __ \\/  _ \\   __\\__  \\\n");
+        printf("\t\t     ");
+        printf(" |    `   \\  ___/|  | \\/|  | \\(  <_> )  |  / __ \\_\n");
+        printf("\t\t     ");
+        printf("/_______  /\\___  >__|   |__|   \\____/|__| (____  /\n");
+        printf("\t\t     ");
+        printf("        \\/     \\/                              \\/\n");
+    }
+    else {
+        printf("\n\n");
+        color(15);
+        printf("\t\t\t\t");
+        printf("          o o    o o          \n");
+        printf("\t\t\t\t");
+        color(8);
+        printf("   /");
+        color(6);
+        printf("       \\ \\");
+        color(10);
+        printf("##");
+        color(6);
+        printf("/ /");
+        color(8);
+        printf("        \\  \n");
+        color(8);
+        printf("\t\t\t\t");
+        printf(" /X/");
+        color(6);
+        printf("      (+");
+        color(4);
+        printf("@");
+        printf("+");
+        color(10);
+        printf("##");
+        color(6);
+        printf("+");
+        color(4);
+        printf("@");
+        color(6);
+        printf("+)       ");
+        color(8);
+        printf("\\X\\\n");
+        printf("\t\t\t\t");
+        printf("|XX\\      ");
+        color(7);
+        printf("\'--____--\'");
+        color(8);
+        printf("      /XX|\n");
+        printf("\t\t\t\t");
+        printf("|XXX\\     _/      \\_     /XXX|\n");
+        printf("\t\t\t\t");
+        printf(" \\XXXXXXX            XXXXXXX/\n");
+        printf("\t\t\t\t");
+        printf("   \\XXXX    \\    /    XXXXX/\n");
+        printf("\t\t\t\t");
+        printf("        |");
+        color(4);
+        printf("   0    0");
+        color(8);
+        printf("   |        \n");
+        printf("\t\t\t\t");
+        printf("         |          |         \n");
+        printf("\t\t\t\t");
+        printf("         \\          /         \n");
+        printf("\t\t\t\t");
+        printf("          \\        /          \n");
+        printf("\t\t\t\t");
+        printf("           |,O__O,|           \n");
+        printf("\t\t\t\t");
+        printf("           \\ ---- /           \n");
+        printf("\t\t\t\t");
+        printf("            \\ __ /            \n\n");
+        color(4);
+        printf("\t\t\t");
+        printf("____   ____.__  __       _        .__\n");
+        printf("\t\t\t");
+        printf("\\   \\ /   /|__|/  |_  __L/_______|__|____\n");
+        printf("\t\t\t");
+        printf(" \\   Y   / |  \\   __\\/  _ \\_  __ \\  \\__  \\\n");
+        printf("\t\t\t");
+        printf("  \\     /  |  ||  | (  <_> )  | \\/  |/ __ \\_\n");
+        printf("\t\t\t");
+        printf("   \\___/   |__||__|  \\____/|__|  |__(____  /\n");
+        printf("\t\t\t");
+        printf("                                         \\/\n");
+    }
+    revealPoints(pontuacao, jogadores);
 }
 // game functions
 
@@ -609,7 +733,7 @@ void RunGame(Lista *mao, Fila **mesa, Pilha *baralho, Lista **colecao, int jogad
 
         sortInsert(mesa, played, pontuacao);
 
-        revealPoints(pontuacao, jogadores);
+        showPoints(pontuacao, jogadores);
     }
 }
 

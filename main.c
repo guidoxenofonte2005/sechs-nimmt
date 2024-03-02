@@ -8,6 +8,9 @@
 #include "game_code.h"
 
 #define ROUNDS 10
+#define MIN_PLAYERS 2
+#define MAX_PLAYERS 10
+#define INT_PLACEHOLDER 4
 
 int main()
 {
@@ -33,10 +36,10 @@ int main()
 
 
     // GAME STARTING POINT
-    jogadores = 4;
+    jogadores = INT_PLACEHOLDER;
     do {
         system("cls");
-        if (jogadores < 2 || jogadores > 10) {
+        if (jogadores < MIN_PLAYERS || jogadores > MAX_PLAYERS) {
             printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
             color(4);
             printf("\t\t\t\t     INSERÇÃO INVÁLIDA!\n");
@@ -50,7 +53,7 @@ int main()
         }
         fflush(stdin);
         scanf("%d", &jogadores);
-    } while (jogadores < 2 || jogadores > 10);
+    } while (jogadores < MIN_PLAYERS || jogadores > MAX_PLAYERS);
 
     system("cls");
 
@@ -61,16 +64,20 @@ int main()
     loadingScreen();
     system("cls");
 
-    //for (int i = 0; i < ROUNDS; i++) {
-        //presentTurn(i+1);
-//        if (i != 0)
-//            showPoints(pontos, jogadores);
+    for (int i = 0; i < ROUNDS; i++) {
+        presentTurn(i+1);
+        if (i != 0)
+            showPoints(pontos, jogadores);
         Mao = criar();
         Baralho = criarPilha();
         RunGame(Mao, Mesa, Baralho, ColecaoJogadores, jogadores, pontos);
-    //}
+    }
 
     winner = countPoints(pontos, jogadores);
+
+    victoryScreen(winner, pontos, jogadores);
+
+    Sleep(3000);
 
     return 0;
 }
