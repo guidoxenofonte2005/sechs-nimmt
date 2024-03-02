@@ -3,3 +3,4 @@ beta-1.1 -- UI/UX improvement
 beta-1.1v3 -- UI/UX improvement, added beta rules/options system
 beta-1.2 -- UI/UX improvement, added definitive rules/options system
 prerelease-1.0 -- new card design, added credits, tweaked showing list/queue code
+release-1.0 -- working points system, simple victory/defeat screen
