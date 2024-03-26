@@ -22,5 +22,5 @@
 > - 1. Open the ***CodeBlocks*** code editor and hit ***Ctrl+O***
 > - 2. Open the '***sechs nimmt.cbp***' file and hit ***F9***
 
-### Linux
+### Linux / MacOS
 ~~Currently unsupported~~
